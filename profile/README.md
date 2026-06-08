@@ -1,4 +1,4 @@
-# NetGarde
+# TrustEdge
 
 **Self-hosted zero-trust network security platform** — WireGuard VPN access, DNS policy enforcement, real-time monitoring, behavior analytics, and optional AI-assisted operations.
 
@@ -10,8 +10,8 @@ A **SASE-style stack** you operate on your own infrastructure: enterprise-grade 
 
 | Repository | Description |
 |------------|-------------|
-| [**NetGarde**](https://github.com/NetGarde/NetGarde) | Platform — FastAPI backend, React dashboard, dns-sync, host agents, AWS deployment |
-| [**NetGardeClient**](https://github.com/NetGarde/NetGardeClient) | macOS WireGuard client — API enroll, menu bar app, usage reporting |
+| [**TrustEdge**](https://github.com/TrustEdge/TrustEdge) | Platform — FastAPI backend, React dashboard, dns-sync, host agents, AWS deployment |
+| [**TrustEdgeClient**](https://github.com/TrustEdge/TrustEdgeClient) | macOS WireGuard client — API enroll, menu bar app, usage reporting |
 
 ---
 
@@ -31,18 +31,18 @@ A **SASE-style stack** you operate on your own infrastructure: enterprise-grade 
 ## Architecture
 
 <p align="center">
-  <a href="https://github.com/NetGarde/NetGarde/blob/develop/docs/SYSTEM_ARCHITECTURE.md">
-    <img width="90%" alt="NetGarde system architecture" src="https://github.com/user-attachments/assets/bab37178-52c4-4f6d-b4ac-1500230d0af5" />
+  <a href="https://github.com/TrustEdge/TrustEdge/blob/develop/docs/SYSTEM_ARCHITECTURE.md">
+    <img width="90%" alt="TrustEdge system architecture" src="https://github.com/user-attachments/assets/bab37178-52c4-4f6d-b4ac-1500230d0af5" />
   </a>
 </p>
 
 ```
 DNS:     Client → WireGuard → dnsmasq → API → WebSocket → Dashboard
 Policy:  Dashboard → API → RDS → wg-agent → dns-sync → dnsmasq reload
-Enroll:  NetGardeClient → POST /v1/enroll → wg-agent → WireGuard config
+Enroll:  TrustEdgeClient → control plane → wg-agent → WireGuard config
 ```
 
-Full documentation: [NetGarde/docs](https://github.com/NetGarde/NetGarde/tree/develop/docs)
+Full documentation: [TrustEdge/docs](https://github.com/TrustEdge/TrustEdge/tree/develop/docs)
 
 ---
 
