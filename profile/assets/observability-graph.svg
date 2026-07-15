@@ -1,18 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 420" role="img" aria-labelledby="title desc">
-  <title id="title">TrustEdge observability graph</title>
-  <desc id="desc">Conceptual observability graph: devices connect to apps and flows; detection raises alerts connected to devices</desc>
+  <title id="obs-title">TrustEdge observability graph</title>
+  <desc id="obs-desc">Conceptual observability graph: devices connect to apps and flows; detection raises alerts connected to devices</desc>
   <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="obs-bg" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#F8FAFC"/>
       <stop offset="100%" stop-color="#EEF2FF"/>
     </linearGradient>
-    <linearGradient id="edge" x1="0%" y1="0%" x2="100%" y2="0%">
+    <linearGradient id="obs-edge" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#93C5FD"/>
       <stop offset="100%" stop-color="#C4B5FD"/>
     </linearGradient>
-    <filter id="glow">
-      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#7C3AED" flood-opacity="0.25"/>
-    </filter>
     <style>
       .title { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif; font-size: 14px; font-weight: 800; letter-spacing: 0.06em; fill: #64748B; }
       .p { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif; font-size: 12px; font-weight: 500; fill: #475569; }
@@ -22,12 +19,12 @@
     </style>
   </defs>
 
-  <rect width="1180" height="420" rx="22" fill="url(#bg)"/>
+  <rect width="1180" height="420" rx="22" fill="url(#obs-bg)"/>
   <text class="title" x="40" y="36">OBSERVABILITY GRAPH</text>
-  <text class="p" x="220" y="36">Canonical twin model · impact · blast radius · RCA</text>
+  <text class="p" x="220" y="36">Canonical twin model Â· impact Â· blast radius Â· RCA</text>
 
   <!-- Edges (behind nodes) -->
-  <g stroke="url(#edge)" stroke-width="2.4" fill="none" stroke-linecap="round">
+  <g stroke="url(#obs-edge)" stroke-width="2.4" fill="none" stroke-linecap="round">
     <path d="M220 200 H380"/>
     <path d="M220 200 H380" transform="translate(0,70)"/>
     <path d="M220 200 Q300 120 380 130"/>
@@ -46,14 +43,14 @@
   <text class="rel" x="250" y="310">owns</text>
 
   <!-- Device node -->
-  <g filter="url(#glow)" transform="translate(140,160)">
+  <g transform="translate(140,160)">
     <rect width="140" height="80" rx="16" fill="#EFF6FF" stroke="#2563EB" stroke-width="2"/>
     <text class="n" x="70" y="34" text-anchor="middle">device</text>
     <text class="s" x="70" y="54" text-anchor="middle">laptop-01</text>
   </g>
 
   <!-- App node -->
-  <g filter="url(#glow)" transform="translate(380,160)">
+  <g transform="translate(380,160)">
     <rect width="140" height="80" rx="16" fill="#EEF2FF" stroke="#6366F1" stroke-width="2"/>
     <text class="n" x="70" y="34" text-anchor="middle">app</text>
     <text class="s" x="70" y="54" text-anchor="middle">chrome</text>
@@ -63,25 +60,25 @@
   <g transform="translate(380,300)">
     <rect width="140" height="64" rx="16" fill="#F8FAFC" stroke="#94A3B8" stroke-width="1.6"/>
     <text class="n" x="70" y="28" text-anchor="middle">flow</text>
-    <text class="s" x="70" y="46" text-anchor="middle">tcp · egress</text>
+    <text class="s" x="70" y="46" text-anchor="middle">tcp Â· egress</text>
   </g>
 
   <!-- Event / process -->
   <g transform="translate(380,90)">
     <rect width="140" height="64" rx="16" fill="#F5F3FF" stroke="#A78BFA" stroke-width="1.6"/>
     <text class="n" x="70" y="28" text-anchor="middle">process</text>
-    <text class="s" x="70" y="46" text-anchor="middle">shell ’ curl</text>
+    <text class="s" x="70" y="46" text-anchor="middle">shell ' curl</text>
   </g>
 
   <!-- Detection -->
-  <g filter="url(#glow)" transform="translate(680,160)">
+  <g transform="translate(680,160)">
     <rect width="140" height="80" rx="16" fill="#F5F3FF" stroke="#7C3AED" stroke-width="2"/>
     <text class="n" x="70" y="34" text-anchor="middle">rule</text>
     <text class="s" x="70" y="54" text-anchor="middle">attack chain</text>
   </g>
 
   <!-- Alert -->
-  <g filter="url(#glow)" transform="translate(960,160)">
+  <g transform="translate(960,160)">
     <rect width="140" height="80" rx="16" fill="#FEF2F2" stroke="#EF4444" stroke-width="2"/>
     <text class="n" x="70" y="34" text-anchor="middle">alert</text>
     <text class="s" x="70" y="54" text-anchor="middle">high severity</text>

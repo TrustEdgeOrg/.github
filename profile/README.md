@@ -1,4 +1,4 @@
-# <img src="assets/trustedge-icon.svg" alt="" width="40" height="40" align="absmiddle" /> TrustEdge
+# <img src="./assets/trustedge-icon.svg" alt="" width="40" height="40" align="absmiddle" /> TrustEdge
 
 ### Self-hosted security observability
 
@@ -9,17 +9,17 @@ React dashboard · FastAPI control plane · TrustEdge Agent · Agent API · AWS
 <br/>
 
 <p align="center">
-  <img src="assets/pipeline.svg" alt="Endpoint → Collector → Batch → Compress → Secure upload → Agent API → Stream → Detection Attack → Alert" width="100%" />
+  <img src="./assets/pipeline.svg" alt="Endpoint → Collector → Batch → Compress → Secure upload → Agent API → Stream → Detection Attack → Alert" width="1100" />
 </p>
 
 ---
 
-## <img src="assets/icon-architecture.svg" alt="" width="22" height="22" align="absmiddle" /> Platform architecture
+## <img src="./assets/icon-architecture.svg" alt="" width="22" height="22" align="absmiddle" /> TrustEdge architecture
 
 How the stack fits together — edge collection, secure ingest, stream detection, and the operator dashboard.
 
 <p align="center">
-  <img src="assets/architecture.svg" alt="TrustEdge architecture diagram" width="100%" />
+  <img src="./assets/architecture.png" alt="TrustEdge architecture — endpoint agents, Agent API, Kafka, detection engine, control plane, and dashboard" width="1100" />
 </p>
 
 | Layer | What lives here |
@@ -34,12 +34,12 @@ How the stack fits together — edge collection, secure ingest, stream detection
 
 ---
 
-## <img src="assets/icon-flow.svg" alt="" width="22" height="22" align="absmiddle" /> Ecosystem map
+## <img src="./assets/icon-flow.svg" alt="" width="22" height="22" align="absmiddle" /> Ecosystem map
 
 Four repositories, one detection path. The VPN client is optional and not required for endpoint signal.
 
 <p align="center">
-  <img src="assets/ecosystem.svg" alt="TrustEdge ecosystem — Agent, Agent API, TrustEdge, Client" width="100%" />
+  <img src="./assets/ecosystem.svg" alt="TrustEdge ecosystem — Agent, Agent API, TrustEdge, Client" width="1100" />
 </p>
 
 | Repository | Role |
@@ -51,42 +51,23 @@ Four repositories, one detection path. The VPN client is optional and not requir
 
 ---
 
-## <img src="assets/icon-collection.svg" alt="" width="22" height="22" align="absmiddle" /> Detection path
+## <img src="./assets/icon-collection.svg" alt="" width="22" height="22" align="absmiddle" /> Detection path
 
 Rules stay deterministic. LLMs only explain — they do not decide.
 
 <p align="center">
-  <img src="assets/detection-path.svg" alt="Kafka → rules engine → twin alert ingest → dashboard" width="100%" />
+  <img src="./assets/detection-path.svg" alt="Kafka → rules engine → twin alert ingest → dashboard" width="1100" />
 </p>
 
 ---
 
-## <img src="assets/icon-architecture.svg" alt="" width="22" height="22" align="absmiddle" /> Observability graph
+## <img src="./assets/icon-architecture.svg" alt="" width="22" height="22" align="absmiddle" /> Observability graph
 
 Canonical twin model for impact analysis, blast radius, and RCA — entities and dependencies, not a layout toy.
 
 <p align="center">
-  <img src="assets/observability-graph.svg" alt="Observability graph: device, app, process, flow, rule, alert" width="100%" />
+  <img src="./assets/observability-graph.svg" alt="Observability graph: device, app, process, flow, rule, alert" width="1100" />
 </p>
-
----
-
-## Pipelines by repo
-
-<table>
-  <tr>
-    <td width="50%" valign="top">
-      <h3>Agent</h3>
-      <p>On-device: collect → batch → compress → upload</p>
-      <img src="assets/agent-pipeline.svg" alt="Agent pipeline" width="100%" />
-    </td>
-    <td width="50%" valign="top">
-      <h3>Agent API</h3>
-      <p>Ingest: upload → validate → persist → stream</p>
-      <img src="assets/api-pipeline.svg" alt="Agent API pipeline" width="100%" />
-    </td>
-  </tr>
-</table>
 
 ---
 
