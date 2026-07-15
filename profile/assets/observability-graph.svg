@@ -1,97 +1,105 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 420" role="img" aria-labelledby="title desc">
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 480" role="img" aria-labelledby="obs-title obs-desc">
   <title id="obs-title">TrustEdge observability graph</title>
-  <desc id="obs-desc">Conceptual observability graph: devices connect to apps and flows; detection raises alerts connected to devices</desc>
+  <desc id="obs-desc">Device links to process, app, and flow entities. Detection rules connect to alerts for impact analysis and RCA.</desc>
   <defs>
     <linearGradient id="obs-bg" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#F8FAFC"/>
       <stop offset="100%" stop-color="#EEF2FF"/>
     </linearGradient>
-    <linearGradient id="obs-edge" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#93C5FD"/>
-      <stop offset="100%" stop-color="#C4B5FD"/>
+    <linearGradient id="obs-line" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#60A5FA"/>
+      <stop offset="100%" stop-color="#A78BFA"/>
     </linearGradient>
+    <marker id="obs-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#6366F1"/>
+    </marker>
     <style>
-      .title { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif; font-size: 14px; font-weight: 800; letter-spacing: 0.06em; fill: #64748B; }
-      .p { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif; font-size: 12px; font-weight: 500; fill: #475569; }
-      .n { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif; font-size: 12.5px; font-weight: 800; fill: #0F172A; }
-      .s { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif; font-size: 10.5px; font-weight: 600; fill: #64748B; }
-      .rel { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif; font-size: 10px; font-weight: 700; fill: #6D28D9; }
+      .h { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif; font-size: 18px; font-weight: 800; fill: #0F172A; }
+      .s { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif; font-size: 13px; font-weight: 500; fill: #64748B; }
+      .n { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif; font-size: 15px; font-weight: 800; fill: #0F172A; }
+      .rel { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif; font-size: 12px; font-weight: 700; fill: #6366F1; }
+      .cap { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif; font-size: 12px; font-weight: 700; fill: #475569; }
+      .pill { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif; font-size: 12px; font-weight: 700; }
     </style>
   </defs>
 
-  <rect width="1180" height="420" rx="22" fill="url(#obs-bg)"/>
-  <text class="title" x="40" y="36">OBSERVABILITY GRAPH</text>
-  <text class="p" x="220" y="36">Canonical twin model · impact · blast radius · RCA</text>
+  <rect width="1180" height="480" rx="24" fill="url(#obs-bg)"/>
 
-  <!-- Edges (behind nodes) -->
-  <g stroke="url(#obs-edge)" stroke-width="2.4" fill="none" stroke-linecap="round">
-    <path d="M220 200 H380"/>
-    <path d="M220 200 H380" transform="translate(0,70)"/>
-    <path d="M220 200 Q300 120 380 130"/>
-    <path d="M520 200 H680"/>
-    <path d="M520 270 H680" stroke-dasharray="6 4"/>
-    <path d="M820 200 H960"/>
-    <path d="M220 200 Q180 320 380 340"/>
+  <!-- Column labels -->
+  <text class="cap" x="140" y="42" text-anchor="middle">OBSERVED</text>
+  <text class="cap" x="430" y="42" text-anchor="middle">ACTIVITY</text>
+  <text class="cap" x="740" y="42" text-anchor="middle">DETECTION</text>
+  <text class="cap" x="1020" y="42" text-anchor="middle">OUTCOME</text>
+
+  <!-- Edges -->
+  <g fill="none" stroke="url(#obs-line)" stroke-width="3" stroke-linecap="round" marker-end="url(#obs-arr)">
+    <path d="M230 200 H330"/>
+    <path d="M230 200 Q280 120 330 110"/>
+    <path d="M230 200 Q280 300 330 300"/>
+    <path d="M530 200 H630"/>
+    <path d="M530 300 H630" stroke-dasharray="7 5"/>
+    <path d="M850 200 H920"/>
   </g>
 
-  <text class="rel" x="280" y="192">runs</text>
-  <text class="rel" x="270" y="258">focuses</text>
-  <text class="rel" x="290" y="118">emits</text>
-  <text class="rel" x="580" y="192">detects</text>
-  <text class="rel" x="575" y="262">correlates</text>
-  <text class="rel" x="870" y="192">alerts</text>
-  <text class="rel" x="250" y="310">owns</text>
+  <text class="rel" x="270" y="188">runs</text>
+  <text class="rel" x="255" y="118">emits</text>
+  <text class="rel" x="250" y="268">opens</text>
+  <text class="rel" x="560" y="188">matches</text>
+  <text class="rel" x="555" y="288">correlates</text>
+  <text class="rel" x="870" y="188">raises</text>
 
-  <!-- Device node -->
-  <g transform="translate(140,160)">
-    <rect width="140" height="80" rx="16" fill="#EFF6FF" stroke="#2563EB" stroke-width="2"/>
-    <text class="n" x="70" y="34" text-anchor="middle">device</text>
-    <text class="s" x="70" y="54" text-anchor="middle">laptop-01</text>
+  <!-- Device -->
+  <g transform="translate(70,150)">
+    <rect width="160" height="100" rx="18" fill="#EFF6FF" stroke="#2563EB" stroke-width="2.5"/>
+    <text class="n" x="80" y="42" text-anchor="middle">device</text>
+    <text class="s" x="80" y="66" text-anchor="middle">laptop-01</text>
   </g>
 
-  <!-- App node -->
-  <g transform="translate(380,160)">
-    <rect width="140" height="80" rx="16" fill="#EEF2FF" stroke="#6366F1" stroke-width="2"/>
-    <text class="n" x="70" y="34" text-anchor="middle">app</text>
-    <text class="s" x="70" y="54" text-anchor="middle">chrome</text>
+  <!-- Process -->
+  <g transform="translate(330,60)">
+    <rect width="200" height="90" rx="18" fill="#F5F3FF" stroke="#A78BFA" stroke-width="2"/>
+    <text class="n" x="100" y="38" text-anchor="middle">process</text>
+    <text class="s" x="100" y="62" text-anchor="middle">shell -&gt; curl</text>
   </g>
 
-  <!-- Flow node -->
-  <g transform="translate(380,300)">
-    <rect width="140" height="64" rx="16" fill="#F8FAFC" stroke="#94A3B8" stroke-width="1.6"/>
-    <text class="n" x="70" y="28" text-anchor="middle">flow</text>
-    <text class="s" x="70" y="46" text-anchor="middle">tcp · egress</text>
+  <!-- App -->
+  <g transform="translate(330,155)">
+    <rect width="200" height="90" rx="18" fill="#EEF2FF" stroke="#6366F1" stroke-width="2.5"/>
+    <text class="n" x="100" y="38" text-anchor="middle">app</text>
+    <text class="s" x="100" y="62" text-anchor="middle">chrome</text>
   </g>
 
-  <!-- Event / process -->
-  <g transform="translate(380,90)">
-    <rect width="140" height="64" rx="16" fill="#F5F3FF" stroke="#A78BFA" stroke-width="1.6"/>
-    <text class="n" x="70" y="28" text-anchor="middle">process</text>
-    <text class="s" x="70" y="46" text-anchor="middle">shell ' curl</text>
+  <!-- Flow -->
+  <g transform="translate(330,250)">
+    <rect width="200" height="90" rx="18" fill="#F8FAFC" stroke="#94A3B8" stroke-width="2"/>
+    <text class="n" x="100" y="38" text-anchor="middle">flow</text>
+    <text class="s" x="100" y="62" text-anchor="middle">tcp egress</text>
   </g>
 
-  <!-- Detection -->
-  <g transform="translate(680,160)">
-    <rect width="140" height="80" rx="16" fill="#F5F3FF" stroke="#7C3AED" stroke-width="2"/>
-    <text class="n" x="70" y="34" text-anchor="middle">rule</text>
-    <text class="s" x="70" y="54" text-anchor="middle">attack chain</text>
+  <!-- Rule -->
+  <g transform="translate(630,150)">
+    <rect width="220" height="100" rx="18" fill="#F5F3FF" stroke="#7C3AED" stroke-width="2.5"/>
+    <text class="n" x="110" y="42" text-anchor="middle">rule</text>
+    <text class="s" x="110" y="66" text-anchor="middle">attack chain</text>
   </g>
 
   <!-- Alert -->
-  <g transform="translate(960,160)">
-    <rect width="140" height="80" rx="16" fill="#FEF2F2" stroke="#EF4444" stroke-width="2"/>
-    <text class="n" x="70" y="34" text-anchor="middle">alert</text>
-    <text class="s" x="70" y="54" text-anchor="middle">high severity</text>
+  <g transform="translate(920,150)">
+    <rect width="200" height="100" rx="18" fill="#FEF2F2" stroke="#EF4444" stroke-width="2.5"/>
+    <text class="n" x="100" y="42" text-anchor="middle">alert</text>
+    <text class="s" x="100" y="66" text-anchor="middle">high severity</text>
   </g>
 
-  <!-- Legend -->
-  <g transform="translate(40,380)">
-    <rect width="12" height="12" rx="3" fill="#EFF6FF" stroke="#2563EB"/>
-    <text class="s" x="20" y="11">Observed entities</text>
-    <rect x="160" width="12" height="12" rx="3" fill="#F5F3FF" stroke="#7C3AED"/>
-    <text class="s" x="180" y="11">Detection</text>
-    <rect x="280" width="12" height="12" rx="3" fill="#FEF2F2" stroke="#EF4444"/>
-    <text class="s" x="300" y="11">Alert</text>
-    <text class="s" x="1140" y="11" text-anchor="end" fill="#94A3B8">Walk with /twin/graph/traverse</text>
+  <!-- Bottom capability pills -->
+  <g transform="translate(70,390)">
+    <rect width="230" height="44" rx="12" fill="#FFFFFF" stroke="#CBD5E1"/>
+    <text class="pill" x="115" y="27" text-anchor="middle" fill="#334155">Impact analysis</text>
+    <rect x="250" width="230" height="44" rx="12" fill="#FFFFFF" stroke="#CBD5E1"/>
+    <text class="pill" x="365" y="27" text-anchor="middle" fill="#334155">Blast radius</text>
+    <rect x="500" width="230" height="44" rx="12" fill="#FFFFFF" stroke="#CBD5E1"/>
+    <text class="pill" x="615" y="27" text-anchor="middle" fill="#334155">Root-cause (RCA)</text>
+    <rect x="750" width="300" height="44" rx="12" fill="#EEF2FF" stroke="#C7D2FE"/>
+    <text class="pill" x="900" y="27" text-anchor="middle" fill="#4338CA">GET /twin/graph/traverse</text>
   </g>
 </svg>

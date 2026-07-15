@@ -71,10 +71,10 @@ Rules stay deterministic. LLMs only explain — they do not decide.
 
 ## <img src="./assets/icon-architecture.svg" alt="" width="22" height="22" align="absmiddle" /> Observability graph
 
-Canonical twin model for impact analysis, blast radius, and RCA — entities and dependencies, not a layout toy.
+Canonical twin model — devices, processes, apps, and flows linked to rules and alerts. Used for **impact analysis**, **blast radius**, and **RCA** (not a layout toy).
 
 <p align="center">
-  <img src="./assets/observability-graph.svg" alt="Observability graph: device, app, process, flow, rule, alert" width="1100" />
+  <img src="./assets/observability-graph.png" alt="Observability graph: device → process / app / flow → rule → alert" width="1100" />
 </p>
 
 ---
