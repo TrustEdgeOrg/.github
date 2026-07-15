@@ -8,6 +8,16 @@ React dashboard · FastAPI control plane · TrustEdge Agent · Agent API · AWS
 
 <br/>
 
+## About the project
+
+TrustEdge is a **self-hosted security observability platform** for teams that want real endpoint signal and actionable detection without buying a heavy enterprise EDR stack.
+
+A lightweight [TrustEdge Agent](https://github.com/TrustEdgeOrg/TrustEdge-Agent) runs on macOS, Linux, and Windows. It collects process, app-focus, and network-posture telemetry, batches and compresses it, then uploads over HTTPS to [TrustEdge-Agent-API](https://github.com/TrustEdgeOrg/TrustEdge-Agent-API). Events flow onto Kafka, a rules engine looks for attack chains and drift, and the [TrustEdge](https://github.com/TrustEdgeOrg/TrustEdge) control plane surfaces **attack alerts**, maps, and behavior views in a React dashboard.
+
+Detection stays **rules-based** (deterministic). Optional LLMs only help explain state to operators — they do not decide what is malicious.
+
+Built for portfolio / educational use and AWS deploy with CI/CD.
+
 <p align="center">
   <img src="./assets/pipeline.svg" alt="Endpoint → Collector → Batch → Compress → Secure upload → Agent API → Stream → Detection Attack → Alert" width="1100" />
 </p>
