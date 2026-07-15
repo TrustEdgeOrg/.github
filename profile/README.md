@@ -19,7 +19,7 @@ React dashboard · FastAPI control plane · TrustEdge Agent · Agent API · AWS
 How the stack fits together — edge collection, secure ingest, stream detection, and the operator dashboard.
 
 <p align="center">
-  <img src="./assets/architecture-v2.png" alt="TrustEdge architecture — endpoint agents, Agent API, Kafka, detection engine, control plane, and dashboard" width="1100" />
+  <img src="./assets/architecture-v3.png" alt="TrustEdge architecture — 5 clear stages from endpoint agent to dashboard" width="1100" />
 </p>
 
 | Layer | What lives here |
