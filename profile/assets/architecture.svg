@@ -23,10 +23,6 @@
       <stop offset="0%" stop-color="#F8FAFC"/>
       <stop offset="100%" stop-color="#E2E8F0"/>
     </linearGradient>
-    <linearGradient id="arch-amberCard" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#FFFBEB"/>
-      <stop offset="100%" stop-color="#FEF3C7"/>
-    </linearGradient>
     <linearGradient id="arch-flow" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#60A5FA"/>
       <stop offset="100%" stop-color="#A78BFA"/>

@@ -19,7 +19,7 @@ React dashboard · FastAPI control plane · TrustEdge Agent · Agent API · AWS
 How the stack fits together — edge collection, secure ingest, stream detection, and the operator dashboard.
 
 <p align="center">
-  <img src="./assets/architecture.png" alt="TrustEdge architecture — endpoint agents, Agent API, Kafka, detection engine, control plane, and dashboard" width="1100" />
+  <img src="./assets/architecture-v2.png" alt="TrustEdge architecture — endpoint agents, Agent API, Kafka, detection engine, control plane, and dashboard" width="1100" />
 </p>
 
 | Layer | What lives here |
@@ -43,7 +43,7 @@ Three repositories, one detection path.
 
 | Repository | Role |
 |------------|------|
-| [**TrustEdge**](https://github.com/TrustEdgeOrg/TrustEdge) | Control plane · dashboard · detection |
+| [**TrustEdge**](https://github.com/TrustEdgeOrg/TrustEdge/tree/docs/readme-endpoint-focus) | Control plane · dashboard · detection |
 | [**TrustEdge-Agent**](https://github.com/TrustEdgeOrg/TrustEdge-Agent) | Endpoint collector (Go) |
 | [**TrustEdge-Agent-API**](https://github.com/TrustEdgeOrg/TrustEdge-Agent-API) | Ingest · validate · Kafka |
 
@@ -87,4 +87,4 @@ Canonical twin model for impact analysis, blast radius, and RCA — entities and
 
 ---
 
-**Docs:** [Architecture](https://github.com/TrustEdgeOrg/TrustEdge/blob/develop/docs/SYSTEM_ARCHITECTURE.md) · [TrustEdge README](https://github.com/TrustEdgeOrg/TrustEdge) · [Org](https://github.com/TrustEdgeOrg)
+**Docs:** [Architecture](https://github.com/TrustEdgeOrg/TrustEdge/blob/docs/readme-endpoint-focus/docs/SYSTEM_ARCHITECTURE.md) · [TrustEdge README](https://github.com/TrustEdgeOrg/TrustEdge/blob/docs/readme-endpoint-focus/README.md) · [Org](https://github.com/TrustEdgeOrg)
