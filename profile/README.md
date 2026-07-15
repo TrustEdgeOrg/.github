@@ -1,17 +1,27 @@
 # TrustEdge
 
-**Self-hosted zero-trust network security platform** — WireGuard VPN access, DNS policy enforcement, real-time monitoring, behavior analytics, and optional AI-assisted operations.
+**Self-hosted security observability** — endpoint telemetry, rules-based detection, VPN enrollment, and optional quarantine.
 
-A **SASE-style stack** you operate on your own infrastructure: enterprise-grade visibility and control without appliance lock-in.
+React dashboard · FastAPI control plane · TrustEdge Agent · WireGuard · AWS deploy with CI/CD.
+
+---
+
+## Pipeline
+
+```text
+Endpoint → Collector → Batch → Compress → Secure upload → Agent API → Stream → Detection Attack → Alert
+```
 
 ---
 
 ## Repositories
 
-| Repository | Description |
-|------------|-------------|
-| [**TrustEdge**](https://github.com/TrustEdge/TrustEdge) | Platform — FastAPI backend, React dashboard, dns-sync, host agents, AWS deployment |
-| [**TrustEdgeClient**](https://github.com/TrustEdge/TrustEdgeClient) | macOS WireGuard client — API enroll, menu bar app, usage reporting |
+| Repository | Role |
+|------------|------|
+| [**TrustEdge**](https://github.com/TrustEdgeOrg/TrustEdge) | Control plane — FastAPI backend, React dashboard, detection, host agent, AWS deploy |
+| [**TrustEdge-Agent**](https://github.com/TrustEdgeOrg/TrustEdge-Agent) | Endpoint collector — process, app focus, network posture |
+| [**TrustEdge-Agent-API**](https://github.com/TrustEdgeOrg/TrustEdge-Agent-API) | Ingest · validate · persist · Kafka stream |
+| [**TrustEdgeClient**](https://github.com/TrustEdgeOrg/TrustEdgeClient) | WireGuard enroll client — menu bar app, usage + app context |
 
 ---
 
@@ -19,33 +29,34 @@ A **SASE-style stack** you operate on your own infrastructure: enterprise-grade 
 
 | Capability | Implementation |
 |------------|----------------|
-| Secure access | WireGuard VPN, device enrollment, IP pool allocation |
-| DNS policy | Policy packs, device profiles, schedules, geo rules |
-| Real-time monitoring | WebSocket live feed, Redis-backed throughput charts |
-| Behavior intelligence | Per-device baselines, abnormal scoring, quarantine |
-| Enforcement | Host agent (iptables), dns-sync → dnsmasq reload |
-| AI operations | Network + behavior summaries (OpenAI / Ollama / template) |
+| Endpoint telemetry | TrustEdge Agent → Agent API → stream |
+| Detection | Kafka-backed rules on agent events → attack alerts |
+| Secure access | WireGuard VPN, device enrollment, IP pool |
+| Observability | Network map, client map, live usage, behavior drift |
+| Enforcement | Host agent quarantine (iptables, opt-in) |
+| AI operations | Optional network / behavior summaries (OpenAI / Ollama / template) |
+| Production ops | CloudWatch JSON logs, Alembic, ECR deploy |
 
 ---
 
 ## Architecture
 
 <p align="center">
-  <a href="https://github.com/TrustEdge/TrustEdge/blob/develop/docs/SYSTEM_ARCHITECTURE.md">
+  <a href="https://github.com/TrustEdgeOrg/TrustEdge/blob/develop/docs/SYSTEM_ARCHITECTURE.md">
     <img width="90%" alt="TrustEdge system architecture" src="https://github.com/user-attachments/assets/bab37178-52c4-4f6d-b4ac-1500230d0af5" />
   </a>
 </p>
 
-```
-DNS:     Client → WireGuard → dnsmasq → API → WebSocket → Dashboard
-Policy:  Dashboard → API → RDS → wg-agent → dns-sync → dnsmasq reload
+```text
+Agent:   Endpoint → Agent API → Kafka → detection-engine → alerts → Dashboard
 Enroll:  TrustEdgeClient → control plane → wg-agent → WireGuard config
+Access:  Client → WireGuard → usage / app context → Dashboard
 ```
 
-Full documentation: [TrustEdge/docs](https://github.com/TrustEdge/TrustEdge/tree/develop/docs)
+Docs: [TrustEdge/docs](https://github.com/TrustEdgeOrg/TrustEdge/tree/develop/docs)
 
 ---
 
 ## Tech stack
 
-React · TypeScript · FastAPI · PostgreSQL · Redis · WireGuard · dnsmasq · AWS (EC2, RDS, S3, CloudFront)
+React · TypeScript · FastAPI · Go · PostgreSQL · Redis · Kafka/Redpanda · WireGuard · AWS (EC2, RDS, S3, CloudFront, ECR)
