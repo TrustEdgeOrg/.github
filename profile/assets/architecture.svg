@@ -59,7 +59,7 @@
           fill="none" stroke="url(#arch-brand)" stroke-width="2.8" stroke-linejoin="round" transform="translate(18,0)"/>
     <path d="M10 22 H26 M18 14 V30" stroke="url(#arch-brand)" stroke-width="2.6" stroke-linecap="round" transform="translate(0,0)"/>
     <text class="t1" x="52" y="28">TrustEdge architecture</text>
-    <text class="t2" x="52" y="50">Endpoint telemetry · secure ingest · stream · detection · alerts ' self-hosted on AWS</text>
+    <text class="t2" x="52" y="50">Endpoint telemetry · secure ingest · stream · detection · alerts · self-hosted on AWS</text>
   </g>
 
   <!-- ========== ZONE: EDGE ========== -->
@@ -77,7 +77,7 @@
     <rect x="22" y="23" width="24" height="14" rx="1.5" fill="#BFDBFE"/>
     <path d="M24 48 H44" stroke="#2563EB" stroke-width="2" stroke-linecap="round"/>
     <text class="h" x="64" y="32">macOS / Linux</text>
-    <text class="p" x="64" y="52">Laptop ' workstation</text>
+    <text class="p" x="64" y="52">Laptop · workstation</text>
     <text class="mini" x="64" y="72">trustedge-agent</text>
   </g>
   <g transform="translate(300,172)">
@@ -106,10 +106,10 @@
       <rect x="326" width="118" height="34" rx="10" fill="#EEF2FF" stroke="#C4B5FD"/>
       <text class="chip" x="385" y="22" text-anchor="middle" fill="#5B21B6">HTTPS upload</text>
     </g>
-    <text class="mini" x="0" y="86">Signals: process ' app focus ' network posture ' client details</text>
+    <text class="mini" x="0" y="86">Signals: process · app focus · network posture · client details</text>
   </g>
 
-  <!-- Primary flow arrow Edge ' Platform -->
+  <!-- Primary flow arrow Edge · Platform -->
   <path d="M640 288 V318" fill="none" stroke="url(#arch-flow)" stroke-width="3.2" stroke-linecap="round" marker-end="url(#arch-arrowHead)"/>
   <text class="flowLbl" x="656" y="310">POST /v1/events</text>
 
@@ -119,7 +119,7 @@
   </g>
   <rect x="68" y="346" width="148" height="24" rx="12" fill="#EDE9FE"/>
   <text class="sec" x="142" y="362" text-anchor="middle" fill="#6D28D9">Control plane</text>
-  <text class="p" x="232" y="362">Docker on EC2 ' FastAPI ' Agent API ' detection-engine ' Kafka</text>
+  <text class="p" x="232" y="362">Docker on EC2 · FastAPI · Agent API · detection-engine · Kafka</text>
 
   <!-- Agent API -->
   <g transform="translate(72,390)">
@@ -134,7 +134,7 @@
       <rect x="156" width="70" height="24" rx="8" fill="#FFFFFF" stroke="#DDD6FE"/>
       <text class="chip" x="191" y="16" text-anchor="middle" fill="#6D28D9">Persist</text>
     </g>
-    <text class="p" x="20" y="112">zstd batches ' device tokens</text>
+    <text class="p" x="20" y="112">zstd batches · device tokens</text>
   </g>
 
   <!-- Kafka -->
@@ -161,7 +161,7 @@
     <text class="p" x="20" y="112">POST /twin/alerts/ingest</text>
   </g>
 
-  <!-- Arrows between Agent API ' Kafka ' Detection -->
+  <!-- Arrows between Agent API · Kafka · Detection -->
   <path d="M322 455 H348" fill="none" stroke="url(#arch-flow)" stroke-width="2.8" stroke-linecap="round" marker-end="url(#arch-arrowHead)"/>
   <path d="M570 455 H596" fill="none" stroke="url(#arch-flow)" stroke-width="2.8" stroke-linecap="round" marker-end="url(#arch-arrowHead)"/>
 
@@ -176,10 +176,10 @@
       <text class="mini" x="70" y="34" text-anchor="middle">/twin/alerts</text>
       <rect x="152" width="140" height="42" rx="10" fill="#FFFFFF" stroke="#BFDBFE"/>
       <text class="chip" x="222" y="18" text-anchor="middle" fill="#1D4ED8">Observability graph</text>
-      <text class="mini" x="222" y="34" text-anchor="middle">devices ' apps ' flows</text>
+      <text class="mini" x="222" y="34" text-anchor="middle">devices · apps · flows</text>
       <rect x="304" width="160" height="42" rx="10" fill="#FFFFFF" stroke="#BFDBFE"/>
       <text class="chip" x="384" y="18" text-anchor="middle" fill="#1D4ED8">Network map</text>
-      <text class="mini" x="384" y="34" text-anchor="middle">attribution ' live usage</text>
+      <text class="mini" x="384" y="34" text-anchor="middle">attribution · live usage</text>
     </g>
     <g transform="translate(20,122)">
       <rect width="112" height="28" rx="8" fill="#1E3A8A"/>
@@ -200,15 +200,15 @@
       <rect width="240" height="36" rx="10" fill="#FFFFFF" stroke="#CBD5E1"/>
       <circle cx="22" cy="18" r="7" fill="#2563EB"/>
       <text class="chip" x="40" y="16" fill="#0F172A">PostgreSQL (RDS)</text>
-      <text class="mini" x="40" y="30" fill="#64748B">devices ' alerts ' twin</text>
+      <text class="mini" x="40" y="30" fill="#64748B">devices · alerts · twin</text>
       <rect y="48" width="240" height="36" rx="10" fill="#FFFFFF" stroke="#CBD5E1"/>
       <rect x="15" y="58" width="14" height="14" rx="2" fill="#DC2626"/>
       <text class="chip" x="40" y="64" fill="#0F172A">Redis</text>
-      <text class="mini" x="40" y="78" fill="#64748B">live usage ' agent mirror</text>
+      <text class="mini" x="40" y="78" fill="#64748B">live usage · agent mirror</text>
     </g>
   </g>
 
-  <!-- Detection ' Backend arrow -->
+  <!-- Detection · Backend arrow -->
   <path d="M738 520 V546" fill="none" stroke="url(#arch-flow)" stroke-width="2.8" stroke-linecap="round" marker-end="url(#arch-arrowHead)"/>
   <text class="flowLbl" x="748" y="538">alerts</text>
 
@@ -227,13 +227,13 @@
       <rect width="216" height="26" rx="8" fill="#FFFFFF" stroke="#BFDBFE"/>
       <text class="chip" x="108" y="17" text-anchor="middle" fill="#1D4ED8">Attack alerts</text>
       <rect y="34" width="216" height="26" rx="8" fill="#FFFFFF" stroke="#BFDBFE"/>
-      <text class="chip" x="108" y="51" text-anchor="middle" fill="#1D4ED8">Network ' client maps</text>
+      <text class="chip" x="108" y="51" text-anchor="middle" fill="#1D4ED8">Network · client maps</text>
       <rect y="68" width="216" height="26" rx="8" fill="#FFFFFF" stroke="#BFDBFE"/>
       <text class="chip" x="108" y="85" text-anchor="middle" fill="#1D4ED8">Behavior profiles</text>
     </g>
   </g>
 
-  <!-- Backend ' Dashboard -->
+  <!-- Backend · Dashboard -->
   <path d="M908 455 H938" fill="none" stroke="url(#arch-flow)" stroke-width="2.8" stroke-linecap="round" marker-end="url(#arch-arrowHeadBlue)"/>
   <text class="flowLbl" x="910" y="444" fill="#1D4ED8">HTTPS / WS</text>
 
@@ -247,8 +247,8 @@
   <g transform="translate(960,656)">
     <rect width="252" height="72" rx="12" fill="url(#arch-amberCard)" stroke="#FCD34D" stroke-width="1.3"/>
     <text class="h" x="14" y="24">WireGuard + host agent</text>
-    <text class="p" x="14" y="44">Enroll ' usage ' quarantine (iptables)</text>
-    <text class="mini" x="14" y="62">TrustEdgeClient ' trustedge-wg-agent</text>
+    <text class="p" x="14" y="44">Enroll · usage · quarantine (iptables)</text>
+    <text class="mini" x="14" y="62">TrustEdgeClient · trustedge-wg-agent</text>
   </g>
 
   <!-- Footer legend -->
@@ -259,6 +259,6 @@
     <text class="mini" x="162" y="12">Detection path</text>
     <rect x="290" width="14" height="14" rx="4" fill="#FEF3C7" stroke="#FCD34D"/>
     <text class="mini" x="312" y="12">Optional VPN / response</text>
-    <text class="mini" x="1180" y="12" text-anchor="end" fill="#94A3B8">TrustEdgeOrg ' self-hosted security observability</text>
+    <text class="mini" x="1180" y="12" text-anchor="end" fill="#94A3B8">TrustEdgeOrg · self-hosted security observability</text>
   </g>
 </svg>
