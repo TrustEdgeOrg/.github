@@ -1,12 +1,32 @@
-# <img src="https://raw.githubusercontent.com/TrustEdgeOrg/TrustEdge/develop/docs/assets/trustedge-icon.svg" alt="" width="36" height="36" align="absmiddle" /> TrustEdge
+# <img src="https://raw.githubusercontent.com/TrustEdgeOrg/TrustEdge/docs/readme-endpoint-focus/docs/assets/trustedge-icon.svg" alt="" width="36" height="36" align="absmiddle" /> TrustEdge
 
 **Self-hosted security observability** — endpoint telemetry, rules-based detection, and attack alerts.
 
 React dashboard · FastAPI control plane · [TrustEdge Agent](https://github.com/TrustEdgeOrg/TrustEdge-Agent) · [Agent API](https://github.com/TrustEdgeOrg/TrustEdge-Agent-API) · AWS deploy with CI/CD.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/TrustEdgeOrg/TrustEdge/develop/docs/assets/pipeline.svg" alt="Endpoint → Collector → Batch → Compress → Secure upload → Agent API → Stream → Detection Attack → Alert" width="1000" />
+  <img src="https://raw.githubusercontent.com/TrustEdgeOrg/TrustEdge/docs/readme-endpoint-focus/docs/assets/pipeline.svg" alt="Endpoint → Collector → Batch → Compress → Secure upload → Agent API → Stream → Detection Attack → Alert" width="1000" />
 </p>
+
+---
+
+## Architecture
+
+<p align="center">
+  <a href="https://github.com/TrustEdgeOrg/TrustEdge/blob/develop/docs/SYSTEM_ARCHITECTURE.md">
+    <img width="100%" alt="TrustEdge architecture — endpoint agents, Agent API, Kafka, detection engine, control plane, and dashboard" src="https://raw.githubusercontent.com/TrustEdgeOrg/TrustEdge/docs/readme-endpoint-focus/docs/assets/architecture.svg" />
+  </a>
+</p>
+
+| Layer | Components | Responsibility |
+|-------|------------|----------------|
+| **Edge** | TrustEdge Agent | Collect · batch · compress · HTTPS upload |
+| **Ingest** | TrustEdge-Agent-API | Auth · validate · persist · publish |
+| **Stream** | Kafka / Redpanda | Durable agent event bus |
+| **Detection** | detection-engine | Rules → attack alerts |
+| **Control plane** | FastAPI · Twin | Alerts, graph, network map, devices |
+| **Dashboard** | React · S3 · CloudFront | Operator views |
+| **Host** *(optional)* | WireGuard · wg-agent | Enroll · quarantine |
 
 ---
 
@@ -35,6 +55,18 @@ Detection and scoring stay **rules-based**. Optional LLMs only explain state for
 
 ---
 
+## How it works
+
+1. **Endpoint** — device running TrustEdge Agent  
+2. **Collector → Batch → Compress** — on-device telemetry pipeline  
+3. **Secure upload** — HTTPS to Agent API  
+4. **Agent API → Stream** — validate, persist, publish  
+5. **Detection Attack → Alert** — rules engine + dashboard alerts  
+
+Deep dive: [System architecture](https://github.com/TrustEdgeOrg/TrustEdge/blob/develop/docs/SYSTEM_ARCHITECTURE.md) · [Docs index](https://github.com/TrustEdgeOrg/TrustEdge/tree/develop/docs)
+
+---
+
 ## Platform highlights
 
 | Capability | Implementation |
@@ -46,39 +78,6 @@ Detection and scoring stay **rules-based**. Optional LLMs only explain state for
 | Enforcement *(optional)* | Host agent quarantine (iptables) |
 | AI operations | Optional network / behavior summaries |
 | Production ops | CloudWatch JSON logs, Alembic, ECR deploy |
-
----
-
-## How it works
-
-1. **Endpoint** — device running TrustEdge Agent  
-2. **Collector → Batch → Compress** — on-device telemetry pipeline  
-3. **Secure upload** — HTTPS to Agent API  
-4. **Agent API → Stream** — validate, persist, publish  
-5. **Detection Attack → Alert** — rules engine + dashboard alerts  
-
-```text
-Agent:   Endpoint → Agent API → Kafka → detection-engine → alerts → Dashboard
-```
-
-Deep dive: [System architecture](https://github.com/TrustEdgeOrg/TrustEdge/blob/develop/docs/SYSTEM_ARCHITECTURE.md) · [Docs index](https://github.com/TrustEdgeOrg/TrustEdge/tree/develop/docs)
-
----
-
-## Architecture
-
-<p align="center">
-  <a href="https://github.com/TrustEdgeOrg/TrustEdge/blob/develop/docs/SYSTEM_ARCHITECTURE.md">
-    <img width="90%" alt="TrustEdge system architecture" src="https://github.com/user-attachments/assets/bab37178-52c4-4f6d-b4ac-1500230d0af5" />
-  </a>
-</p>
-
-| Layer | Components | Responsibility |
-|-------|------------|----------------|
-| **Endpoint agents** | TrustEdge Agent | Process, app, network posture |
-| **Ingest** | TrustEdge-Agent-API | Auth, persist, Kafka publish |
-| **Application** | FastAPI, detection-engine, React | Rules, alerts, UI |
-| **Data** | PostgreSQL, Redis, Kafka/Redpanda | State, live usage, event bus |
 
 ---
 
