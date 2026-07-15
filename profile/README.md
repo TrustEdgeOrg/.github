@@ -30,16 +30,15 @@ How the stack fits together — edge collection, secure ingest, stream detection
 | **Detection** | Rules engine — deterministic attack / drift rules |
 | **Control plane** | FastAPI · Twin — alerts, graph, maps, devices |
 | **Dashboard** | React · S3 · CloudFront — operator views |
-| **Host** *(optional)* | WireGuard · wg-agent — enroll / quarantine |
 
 ---
 
 ## <img src="./assets/icon-flow.svg" alt="" width="22" height="22" align="absmiddle" /> Ecosystem map
 
-Four repositories, one detection path. The VPN client is optional and not required for endpoint signal.
+Three repositories, one detection path.
 
 <p align="center">
-  <img src="./assets/ecosystem.svg" alt="TrustEdge ecosystem — Agent, Agent API, TrustEdge, Client" width="1100" />
+  <img src="./assets/ecosystem.svg" alt="TrustEdge ecosystem — Agent, Agent API, TrustEdge" width="1100" />
 </p>
 
 | Repository | Role |
@@ -47,7 +46,6 @@ Four repositories, one detection path. The VPN client is optional and not requir
 | [**TrustEdge**](https://github.com/TrustEdgeOrg/TrustEdge) | Control plane · dashboard · detection |
 | [**TrustEdge-Agent**](https://github.com/TrustEdgeOrg/TrustEdge-Agent) | Endpoint collector (Go) |
 | [**TrustEdge-Agent-API**](https://github.com/TrustEdgeOrg/TrustEdge-Agent-API) | Ingest · validate · Kafka |
-| [**TrustEdgeClient**](https://github.com/TrustEdgeOrg/TrustEdgeClient) | Optional WireGuard enroll client |
 
 ---
 
@@ -78,8 +76,6 @@ Canonical twin model for impact analysis, blast radius, and RCA — entities and
 | Endpoint telemetry | TrustEdge Agent → Agent API → stream |
 | Detection | Kafka-backed rules → attack alerts |
 | Observability | Network map · client map · behavior drift · graph |
-| Secure access *(optional)* | WireGuard enrollment · IP pool |
-| Enforcement *(optional)* | Host agent quarantine (iptables) |
 | AI operations | Optional summaries (OpenAI / Ollama / template) |
 | Production ops | CloudWatch · Alembic · ECR deploy |
 
