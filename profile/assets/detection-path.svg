@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 200" role="img" aria-labelledby="title desc">
+  <title id="title">Detection attack path</title>
+  <desc id="desc">Stream to rules engine to twin alert ingest to dashboard attack alerts</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#F5F3FF"/>
+    </linearGradient>
+    <linearGradient id="flow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#60A5FA"/>
+      <stop offset="100%" stop-color="#A78BFA"/>
+    </linearGradient>
+    <filter id="soft" x="-8%" y="-8%" width="116%" height="116%">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#1E293B" flood-opacity="0.08"/>
+    </filter>
+    <marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#7C3AED"/>
+    </marker>
+    <style>
+      .title { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif; font-size: 14px; font-weight: 800; letter-spacing: 0.06em; fill: #64748B; }
+      .h { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif; font-size: 13px; font-weight: 800; fill: #0F172A; }
+      .s { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif; font-size: 10.5px; font-weight: 600; fill: #64748B; }
+    </style>
+  </defs>
+
+  <rect width="1180" height="200" rx="22" fill="url(#bg)"/>
+  <text class="title" x="40" y="36">DETECTION PATH</text>
+
+  <g filter="url(#soft)" transform="translate(40,60)">
+    <rect width="180" height="100" rx="16" fill="#EEF2FF" stroke="#C4B5FD" stroke-width="1.5"/>
+    <text class="h" x="90" y="42" text-anchor="middle">Kafka stream</text>
+    <text class="s" x="90" y="64" text-anchor="middle">agent.events</text>
+  </g>
+  <path d="M230 110 H270" stroke="url(#flow)" stroke-width="3" marker-end="url(#a)"/>
+
+  <g filter="url(#soft)" transform="translate(280,60)">
+    <rect width="180" height="100" rx="16" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1.5"/>
+    <text class="h" x="90" y="42" text-anchor="middle">Rules engine</text>
+    <text class="s" x="90" y="64" text-anchor="middle">deterministic</text>
+  </g>
+  <path d="M470 110 H510" stroke="url(#flow)" stroke-width="3" marker-end="url(#a)"/>
+
+  <g filter="url(#soft)" transform="translate(520,60)">
+    <rect width="200" height="100" rx="16" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1.5"/>
+    <text class="h" x="100" y="42" text-anchor="middle">Twin ingest</text>
+    <text class="s" x="100" y="64" text-anchor="middle">/twin/alerts/ingest</text>
+  </g>
+  <path d="M730 110 H770" stroke="url(#flow)" stroke-width="3" marker-end="url(#a)"/>
+
+  <g filter="url(#soft)" transform="translate(780,60)">
+    <rect width="180" height="100" rx="16" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1.5"/>
+    <text class="h" x="90" y="42" text-anchor="middle">Attack alert</text>
+    <text class="s" x="90" y="64" text-anchor="middle">dashboard</text>
+  </g>
+  <path d="M970 110 H1010" stroke="url(#flow)" stroke-width="3" marker-end="url(#a)"/>
+
+  <g filter="url(#soft)" transform="translate(1020,60)">
+    <rect width="120" height="100" rx="16" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.5"/>
+    <text class="h" x="60" y="42" text-anchor="middle">Operator</text>
+    <text class="s" x="60" y="64" text-anchor="middle">review</text>
+  </g>
+</svg>
