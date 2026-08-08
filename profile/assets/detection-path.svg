@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 200" role="img" aria-labelledby="title desc">
-  <title id="det-title">Detection attack path</title>
-  <desc id="det-desc">Stream to rules engine to twin alert ingest to dashboard attack alerts</desc>
+  <title id="det-title">TrustEdge detection path</title>
+  <desc id="det-desc">Kafka stream to rules engine to alert ingest to dashboard attack alerts for operator review</desc>
   <defs>
     <linearGradient id="det-bg" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#F8FAFC"/>
@@ -39,15 +39,15 @@
 
   <g transform="translate(520,60)">
     <rect width="200" height="100" rx="16" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1.5"/>
-    <text class="h" x="100" y="42" text-anchor="middle">Twin ingest</text>
+    <text class="h" x="100" y="42" text-anchor="middle">Alert ingest</text>
     <text class="s" x="100" y="64" text-anchor="middle">/security/alerts/ingest</text>
   </g>
   <path d="M730 110 H770" stroke="url(#det-flow)" stroke-width="3" marker-end="url(#det-a)"/>
 
   <g transform="translate(780,60)">
     <rect width="180" height="100" rx="16" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1.5"/>
-    <text class="h" x="90" y="42" text-anchor="middle">Attack alert</text>
-    <text class="s" x="90" y="64" text-anchor="middle">dashboard</text>
+    <text class="h" x="90" y="42" text-anchor="middle">Attack alerts</text>
+    <text class="s" x="90" y="64" text-anchor="middle">FastAPI + React</text>
   </g>
   <path d="M970 110 H1010" stroke="url(#det-flow)" stroke-width="3" marker-end="url(#det-a)"/>
 

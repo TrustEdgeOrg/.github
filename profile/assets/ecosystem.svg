@@ -57,9 +57,9 @@
     <path d="M28 28 h-4 v10 h4 M44 28 h4 v10 h-4" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round"/>
     <text class="h" x="66" y="32">Agent API</text>
     <text class="chip" x="66" y="48" fill="#6D28D9">FastAPI ingest</text>
-    <text class="p" x="24" y="86">Auth · validate</text>
-    <text class="p" x="24" y="106">Persist events</text>
-    <text class="p" x="24" y="126">Kafka publish</text>
+    <text class="p" x="24" y="86">Device token auth</text>
+    <text class="p" x="24" y="106">Validate events</text>
+    <text class="p" x="24" y="126">Publish to Kafka</text>
     <rect x="24" y="148" width="212" height="28" rx="8" fill="#5B21B6"/>
     <text class="chip" x="130" y="166" text-anchor="middle" fill="#FFF">TrustEdge-Agent-API</text>
   </g>

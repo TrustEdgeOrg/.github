@@ -10,31 +10,31 @@ React dashboard · FastAPI control plane · TrustEdge Agent · Agent API · AWS
 
 ## About the project
 
-TrustEdge is a **self-hosted security observability platform** for teams that want real endpoint signal and actionable detection without buying a heavy enterprise EDR stack.
+TrustEdge is a **self-hosted security observability platform**. It gives teams real endpoint signal and actionable detection without a heavyweight enterprise EDR stack.
 
-A lightweight [TrustEdge Agent](https://github.com/TrustEdgeOrg/TrustEdge-Agent) runs on macOS, Linux, and Windows. It collects:
+A lightweight [TrustEdge Agent](https://github.com/TrustEdgeOrg/TrustEdge-Agent) runs on macOS, Linux, and Windows and collects:
 
-- **Device & activity** — OS posture, foreground focus / idle
+- **Device & activity** — OS posture, foreground focus, idle vs active
 - **Network** — connectivity summary and posture
-- **Processes** — start / exit lifecycle
-- **Security lifecycle** — drivers, services, persistence
-- **AI tools inventory** — apps, CLI agents, local model runtimes, IDE extensions
+- **Processes** — start and exit lifecycle
+- **Security lifecycle** — drivers, services, and persistence
+- **AI tools inventory** — apps, CLI agents, local model runtimes, and IDE extensions
 
-Collectors stay local. Events go into a **durable on-disk queue**, are batched and compressed, then uploaded over **HTTPS with a device token** to [TrustEdge-Agent-API](https://github.com/TrustEdgeOrg/TrustEdge-Agent-API). Events stream on Kafka; a rules engine looks for attack chains and drift; the [TrustEdge](https://github.com/TrustEdgeOrg/TrustEdge) control plane surfaces **attack alerts**, the agents registry, **installed AI software**, and behavior views in a React dashboard.
+Collectors stay on the device. Events land in a **durable on-disk queue**, then are compressed and uploaded over **HTTPS with a device token** to [TrustEdge-Agent-API](https://github.com/TrustEdgeOrg/TrustEdge-Agent-API). From there, Kafka streams events to a rules engine. The [TrustEdge](https://github.com/TrustEdgeOrg/TrustEdge) control plane shows **attack alerts**, the agents registry, **installed AI software**, and behavior views in a React dashboard.
 
-Detection stays **rules-based** (deterministic). Optional LLMs only help explain state to operators — they do not decide what is malicious.
+Detection is **rules-based** and deterministic. Optional LLMs can explain state to operators — they never decide what is malicious.
 
-Built for portfolio / educational use and AWS deploy with CI/CD.
+Built for portfolio and educational use, with AWS deploy and GitHub Actions CI/CD.
 
 <p align="center">
-  <img src="./assets/pipeline.svg" alt="Endpoint → Collector → Batch → Compress → Secure upload → Agent API → Stream → Detection → Alert" width="1100" />
+  <img src="./assets/pipeline.svg" alt="Endpoint → Collector → Durable queue → Compress → Secure upload → Agent API → Stream → Detection → Alert" width="1100" />
 </p>
 
 ---
 
 ## <img src="./assets/icon-architecture.svg" alt="" width="22" height="22" align="absmiddle" /> TrustEdge architecture
 
-How the stack fits together — edge collection, secure ingest, stream detection, and the operator dashboard.
+Five stages from the endpoint to the operator dashboard.
 
 <p align="center">
   <img src="./assets/architecture.svg" alt="TrustEdge architecture — Edge, Ingest, Stream, Detect, Operate" width="1100" />
@@ -42,19 +42,19 @@ How the stack fits together — edge collection, secure ingest, stream detection
 
 | Layer | What lives here |
 |-------|-----------------|
-| **Edge** | TrustEdge Agent — collect · durable queue · batch · compress · HTTPS |
-| **Ingest** | Agent API — device auth · validate · persist · publish |
+| **Edge** | TrustEdge Agent (Go) — collect · durable queue · compress · HTTPS |
+| **Ingest** | Agent API (FastAPI) — device auth · validate · publish |
 | **Stream** | Kafka / Redpanda — durable `trustedge.agent.events` bus |
-| **Detection** | Rules engine — deterministic attack / drift rules |
-| **Control plane** | FastAPI · Twin — alerts, agents, AI inventory, behavior |
-| **Dashboard** | React · S3 · CloudFront — operator views |
+| **Detection** | Rules engine — attack chains and drift → alerts |
+| **Operate** | FastAPI + React — alerts, agents, AI software, behavior |
 | **Data** | PostgreSQL (RDS) · Redis — source of truth · live state |
+| **Hosting** | EC2 + Docker Compose · S3 + CloudFront · ECR |
 
 ---
 
 ## <img src="./assets/icon-flow.svg" alt="" width="22" height="22" align="absmiddle" /> Ecosystem map
 
-Three repositories, one detection path.
+Three repositories. One detection path.
 
 <p align="center">
   <img src="./assets/ecosystem.svg" alt="TrustEdge ecosystem — Agent, Agent API, TrustEdge" width="1100" />
@@ -70,7 +70,7 @@ Three repositories, one detection path.
 
 ## <img src="./assets/icon-collection.svg" alt="" width="22" height="22" align="absmiddle" /> Detection path
 
-Rules stay deterministic. LLMs only explain — they do not decide.
+Kafka feeds a deterministic rules engine. Alerts land in the control plane for operators to review. LLMs may summarize — they do not judge.
 
 <p align="center">
   <img src="./assets/detection-path.svg" alt="Kafka → rules engine → alert ingest → dashboard" width="1100" />
@@ -80,7 +80,7 @@ Rules stay deterministic. LLMs only explain — they do not decide.
 
 ## <img src="./assets/icon-architecture.svg" alt="" width="22" height="22" align="absmiddle" /> Observability graph
 
-Canonical twin model — devices, processes, AI tools, and flows linked to rules and alerts. Used for **impact analysis**, **blast radius**, and **RCA** (not a layout toy).
+The twin links devices, processes, AI tools, and flows to rules and alerts. Use it for **impact analysis**, **blast radius**, and **root-cause analysis** — not decoration.
 
 <p align="center">
   <img src="./assets/observability-graph.svg" alt="Observability graph: device → process / AI tool / flow → rule → alert" width="1100" />
@@ -93,10 +93,10 @@ Canonical twin model — devices, processes, AI tools, and flows linked to rules
 | Capability | Implementation |
 |------------|----------------|
 | Endpoint telemetry | Device, activity, network, process, security lifecycle, AI tools inventory |
-| Reliable delivery | Durable queue · batch · compress · HTTPS · retry / backoff |
+| Reliable delivery | Durable queue · compress · HTTPS · retry with backoff |
 | Detection | Kafka-backed rules → attack alerts |
-| Observability | Attack alerts · agents registry · installed AI software · behavior |
-| AI operations | Optional summaries (OpenAI / Ollama / template) |
+| Observability | Alerts · agents registry · installed AI software · behavior |
+| AI operations | Optional summaries (OpenAI / Ollama / templates) |
 | Production ops | EC2 + Docker Compose · RDS · S3/CloudFront · ECR · GitHub Actions |
 
 ---
