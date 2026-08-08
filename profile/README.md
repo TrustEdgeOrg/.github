@@ -56,24 +56,7 @@ Five stages from the endpoint to the operator dashboard.
 | **Data** | PostgreSQL (RDS) · Redis — source of truth · live twin state |
 | **Hosting** | EC2 + Docker Compose · S3 + CloudFront · ECR |
 
----
-
-## <img src="./assets/icon-aws-shield.svg" alt="" width="22" height="22" align="absmiddle" /> Production on AWS
-
-Self-hosted on **EC2 + Docker Compose**, with **RDS**, **S3 + CloudFront**, **ECR**, and **GitHub Actions**.
-
-<p align="center">
-  <img src="./assets/aws-architecture.svg" alt="TrustEdge AWS production architecture — Edge, EC2 Compose, RDS, S3/CloudFront, GitHub Actions" width="1100" />
-</p>
-
-| Layer | What runs there |
-|-------|-----------------|
-| **EC2 (Compose)** | Agent API · Kafka/Redpanda · detection-engine · FastAPI · Redis |
-| **RDS** | PostgreSQL — agents, alerts, behavior, config |
-| **S3 + CloudFront** | React dashboard + HTTPS |
-| **ECR + Actions** | Image build/push · EC2 deploy · frontend sync |
-
-Detail: [TrustEdge deploy docs](https://github.com/TrustEdgeOrg/TrustEdge/blob/main/docs/DEPLOY.md)
+Production layout: [TrustEdge AWS deploy docs](https://github.com/TrustEdgeOrg/TrustEdge/blob/main/docs/DEPLOY.md)
 
 ---
 
