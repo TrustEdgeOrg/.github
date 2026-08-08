@@ -27,7 +27,7 @@ Detection is **rules-based** and deterministic. Optional LLMs can explain state 
 Built for portfolio and educational use, with AWS deploy and GitHub Actions CI/CD.
 
 <p align="center">
-  <img src="./assets/pipeline.svg" alt="Endpoint → Collector → Durable queue → Compress → Secure upload → Agent API → Stream → Detection → Alert" width="1100" />
+  <img src="./assets/pipeline.svg" alt="Collect → Durable queue → Secure upload → Agent API → Kafka → Detect → Alert" width="1100" />
 </p>
 
 ---

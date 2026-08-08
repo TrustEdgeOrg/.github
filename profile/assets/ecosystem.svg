@@ -6,95 +6,84 @@
       <stop offset="0%" stop-color="#F8FAFC"/>
       <stop offset="100%" stop-color="#EEF2FF"/>
     </linearGradient>
-    <linearGradient id="eco-blue" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#EFF6FF"/>
-      <stop offset="100%" stop-color="#DBEAFE"/>
-    </linearGradient>
-    <linearGradient id="eco-teal" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#F0FDFA"/>
-      <stop offset="100%" stop-color="#CCFBF1"/>
-    </linearGradient>
-    <linearGradient id="eco-green" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#ECFDF5"/>
-      <stop offset="100%" stop-color="#D1FAE5"/>
-    </linearGradient>
     <linearGradient id="eco-flow" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#60A5FA"/>
-      <stop offset="50%" stop-color="#14B8A6"/>
-      <stop offset="100%" stop-color="#10B981"/>
+      <stop offset="0%" stop-color="#2563EB"/>
+      <stop offset="50%" stop-color="#0D9488"/>
+      <stop offset="100%" stop-color="#059669"/>
     </linearGradient>
-    <marker id="eco-arr" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto">
-      <path d="M0,0 L7,3.5 L0,7 Z" fill="#0F766E"/>
+    <marker id="eco-arr" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto">
+      <path d="M0,0 L6.5,3.5 L0,7 Z" fill="#94A3B8"/>
     </marker>
+    <filter id="eco-soft" x="-6%" y="-4%" width="112%" height="112%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0F172A" flood-opacity="0.07"/>
+    </filter>
     <style>
-      .h { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif; font-size: 17px; font-weight: 800; fill: #0F172A; }
-      .p { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif; font-size: 12px; font-weight: 500; fill: #475569; }
-      .chip { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif; font-size: 10.5px; font-weight: 700; }
-      .title { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif; font-size: 14px; font-weight: 800; letter-spacing: 0.06em; fill: #64748B; }
+      .title { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif; font-size: 12px; font-weight: 800; letter-spacing: 0.08em; fill: #64748B; }
+      .lead { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif; font-size: 12px; font-weight: 600; fill: #94A3B8; }
+      .h { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif; font-size: 18px; font-weight: 800; fill: #0F172A; }
+      .p { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif; font-size: 12.5px; font-weight: 600; fill: #64748B; }
+      .chip { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif; font-size: 11px; font-weight: 700; }
       .num { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif; font-size: 12px; font-weight: 800; fill: #FFFFFF; }
-      .arrowlbl { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif; font-size: 10px; font-weight: 700; fill: #64748B; }
+      .arrowlbl { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif; font-size: 10.5px; font-weight: 700; fill: #64748B; }
+      .repo { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif; font-size: 11.5px; font-weight: 700; fill: #FFFFFF; }
     </style>
   </defs>
 
-  <rect width="1180" height="340" rx="22" fill="url(#eco-bg)"/>
-  <text class="title" x="40" y="36">ECOSYSTEM</text>
-  <text class="p" x="150" y="36">Three repos · one detection path</text>
+  <rect width="1180" height="340" rx="20" fill="url(#eco-bg)"/>
+  <text class="title" x="36" y="30">ECOSYSTEM</text>
+  <text class="lead" x="146" y="30">Three repos · one detection path</text>
+
+  <path d="M200 190 H980" fill="none" stroke="url(#eco-flow)" stroke-width="2.5" stroke-linecap="round" opacity="0.22"/>
 
   <!-- 1 Agent -->
-  <g transform="translate(70,64)">
-    <circle cx="22" cy="-8" r="14" fill="#2563EB"/>
-    <text class="num" x="22" y="-3" text-anchor="middle">1</text>
-    <rect y="12" width="300" height="220" rx="18" fill="url(#eco-blue)" stroke="#93C5FD" stroke-width="1.8"/>
-    <circle cx="40" cy="48" r="18" fill="#EFF6FF" stroke="#2563EB" stroke-width="2"/>
-    <circle cx="40" cy="48" r="5" fill="#2563EB"/>
-    <path d="M32 40 A12 12 0 0 1 48 40" fill="none" stroke="#3B82F6" stroke-width="2" stroke-linecap="round"/>
-    <text class="h" x="70" y="44">Agent</text>
-    <text class="chip" x="70" y="62" fill="#1D4ED8">Go · endpoint collector</text>
-    <text class="p" x="28" y="98">Device · activity · network</text>
-    <text class="p" x="28" y="118">Process · security lifecycle</text>
-    <text class="p" x="28" y="138">AI tools inventory</text>
-    <text class="p" x="28" y="158">Durable queue · compress · HTTPS</text>
-    <rect x="28" y="180" width="244" height="30" rx="8" fill="#1E3A8A"/>
-    <text class="chip" x="150" y="200" text-anchor="middle" fill="#FFF">TrustEdge-Agent</text>
+  <g transform="translate(48,56)" filter="url(#eco-soft)">
+    <circle cx="24" cy="16" r="13" fill="#2563EB"/>
+    <text class="num" x="24" y="21" text-anchor="middle">1</text>
+    <rect y="36" width="320" height="230" rx="16" fill="#FFFFFF" stroke="#BFDBFE" stroke-width="1.5"/>
+    <rect y="36" width="320" height="5" rx="2.5" fill="#2563EB"/>
+    <text class="h" x="28" y="78">Agent</text>
+    <text class="chip" x="28" y="98" fill="#1D4ED8">Go · endpoint collector</text>
+    <text class="p" x="28" y="132">Device · activity · network</text>
+    <text class="p" x="28" y="154">Process · security lifecycle</text>
+    <text class="p" x="28" y="176">AI tools inventory</text>
+    <text class="p" x="28" y="198">Durable queue · compress · HTTPS</text>
+    <rect x="28" y="220" width="264" height="32" rx="8" fill="#1E3A8A"/>
+    <text class="repo" x="160" y="241" text-anchor="middle">TrustEdge-Agent</text>
   </g>
-
-  <path d="M380 180 H430" stroke="url(#eco-flow)" stroke-width="3.5" stroke-linecap="round" marker-end="url(#eco-arr)"/>
-  <text class="arrowlbl" x="405" y="168" text-anchor="middle">HTTPS</text>
+  <path d="M378 190 H412" stroke="#CBD5E1" stroke-width="2.4" marker-end="url(#eco-arr)"/>
+  <text class="arrowlbl" x="395" y="176" text-anchor="middle">HTTPS</text>
 
   <!-- 2 Agent API -->
-  <g transform="translate(440,64)">
-    <circle cx="22" cy="-8" r="14" fill="#0D9488"/>
-    <text class="num" x="22" y="-3" text-anchor="middle">2</text>
-    <rect y="12" width="300" height="220" rx="18" fill="url(#eco-teal)" stroke="#5EEAD4" stroke-width="1.8"/>
-    <rect x="24" y="32" width="32" height="28" rx="4" fill="#F0FDFA" stroke="#0D9488" stroke-width="2"/>
-    <path d="M32 40 h-4 v10 h4 M48 40 h4 v10 h-4" fill="none" stroke="#0F766E" stroke-width="2" stroke-linecap="round"/>
-    <text class="h" x="70" y="44">Agent API</text>
-    <text class="chip" x="70" y="62" fill="#0F766E">FastAPI · ingest</text>
-    <text class="p" x="28" y="98">Device token auth</text>
-    <text class="p" x="28" y="118">Validate + decompress</text>
-    <text class="p" x="28" y="138">Publish to Kafka</text>
-    <text class="p" x="28" y="158">Upsert agents registry</text>
-    <rect x="28" y="180" width="244" height="30" rx="8" fill="#0F766E"/>
-    <text class="chip" x="150" y="200" text-anchor="middle" fill="#FFF">TrustEdge-Agent-API</text>
+  <g transform="translate(422,56)" filter="url(#eco-soft)">
+    <circle cx="24" cy="16" r="13" fill="#0D9488"/>
+    <text class="num" x="24" y="21" text-anchor="middle">2</text>
+    <rect y="36" width="320" height="230" rx="16" fill="#FFFFFF" stroke="#99F6E4" stroke-width="1.5"/>
+    <rect y="36" width="320" height="5" rx="2.5" fill="#0D9488"/>
+    <text class="h" x="28" y="78">Agent API</text>
+    <text class="chip" x="28" y="98" fill="#0F766E">FastAPI · ingest</text>
+    <text class="p" x="28" y="132">Device token auth</text>
+    <text class="p" x="28" y="154">Validate + decompress</text>
+    <text class="p" x="28" y="176">Publish to Kafka</text>
+    <text class="p" x="28" y="198">Upsert agents registry</text>
+    <rect x="28" y="220" width="264" height="32" rx="8" fill="#0F766E"/>
+    <text class="repo" x="160" y="241" text-anchor="middle">TrustEdge-Agent-API</text>
   </g>
-
-  <path d="M750 180 H800" stroke="url(#eco-flow)" stroke-width="3.5" stroke-linecap="round" marker-end="url(#eco-arr)"/>
-  <text class="arrowlbl" x="775" y="168" text-anchor="middle">stream</text>
+  <path d="M752 190 H786" stroke="#CBD5E1" stroke-width="2.4" marker-end="url(#eco-arr)"/>
+  <text class="arrowlbl" x="769" y="176" text-anchor="middle">stream</text>
 
   <!-- 3 Control plane -->
-  <g transform="translate(810,64)">
-    <circle cx="22" cy="-8" r="14" fill="#059669"/>
-    <text class="num" x="22" y="-3" text-anchor="middle">3</text>
-    <rect y="12" width="300" height="220" rx="18" fill="url(#eco-green)" stroke="#6EE7B7" stroke-width="1.8"/>
-    <path d="M40 30 L54 38 V52 C54 60 48 64 40 66 C32 64 26 60 26 52 V38 Z" fill="none" stroke="#059669" stroke-width="2.2"/>
-    <path d="M34 48 H46 M40 42 V54" stroke="#059669" stroke-width="2" stroke-linecap="round"/>
-    <text class="h" x="70" y="44">TrustEdge</text>
-    <text class="chip" x="70" y="62" fill="#047857">FastAPI + React</text>
-    <text class="p" x="28" y="98">Rules · attack alerts</text>
-    <text class="p" x="28" y="118">Agents · AI software</text>
-    <text class="p" x="28" y="138">Behavior insights</text>
-    <text class="p" x="28" y="158">S3 / CloudFront · EC2</text>
-    <rect x="28" y="180" width="244" height="30" rx="8" fill="#047857"/>
-    <text class="chip" x="150" y="200" text-anchor="middle" fill="#FFF">TrustEdge</text>
+  <g transform="translate(796,56)" filter="url(#eco-soft)">
+    <circle cx="24" cy="16" r="13" fill="#059669"/>
+    <text class="num" x="24" y="21" text-anchor="middle">3</text>
+    <rect y="36" width="320" height="230" rx="16" fill="#FFFFFF" stroke="#A7F3D0" stroke-width="1.5"/>
+    <rect y="36" width="320" height="5" rx="2.5" fill="#059669"/>
+    <text class="h" x="28" y="78">TrustEdge</text>
+    <text class="chip" x="28" y="98" fill="#047857">FastAPI + React</text>
+    <text class="p" x="28" y="132">Rules · attack alerts</text>
+    <text class="p" x="28" y="154">Agents · AI software</text>
+    <text class="p" x="28" y="176">Behavior insights</text>
+    <text class="p" x="28" y="198">S3 / CloudFront · EC2</text>
+    <rect x="28" y="220" width="264" height="32" rx="8" fill="#047857"/>
+    <text class="repo" x="160" y="241" text-anchor="middle">TrustEdge</text>
   </g>
 </svg>

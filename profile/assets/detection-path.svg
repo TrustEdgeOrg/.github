@@ -1,30 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 260" role="img" aria-labelledby="det-title det-desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 240" role="img" aria-labelledby="det-title det-desc">
   <title id="det-title">TrustEdge detection path</title>
   <desc id="det-desc">Kafka agent events feed a deterministic rules engine; alerts are ingested into FastAPI and shown in the React dashboard for operator review. LLMs may explain but do not judge.</desc>
   <defs>
     <linearGradient id="det-bg" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#F8FAFC"/>
-      <stop offset="100%" stop-color="#FFF1F2"/>
-    </linearGradient>
-    <linearGradient id="det-amber" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#FFFBEB"/>
-      <stop offset="100%" stop-color="#FDE68A"/>
-    </linearGradient>
-    <linearGradient id="det-rose" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#FFF1F2"/>
-      <stop offset="100%" stop-color="#FECDD3"/>
-    </linearGradient>
-    <linearGradient id="det-teal" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#F0FDFA"/>
-      <stop offset="100%" stop-color="#99F6E4"/>
-    </linearGradient>
-    <linearGradient id="det-green" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#ECFDF5"/>
-      <stop offset="100%" stop-color="#A7F3D0"/>
-    </linearGradient>
-    <linearGradient id="det-blue" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#EFF6FF"/>
-      <stop offset="100%" stop-color="#BFDBFE"/>
+      <stop offset="100%" stop-color="#EEF2FF"/>
     </linearGradient>
     <linearGradient id="det-flow" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#D97706"/>
@@ -32,80 +12,86 @@
       <stop offset="70%" stop-color="#0D9488"/>
       <stop offset="100%" stop-color="#2563EB"/>
     </linearGradient>
-    <marker id="det-a" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto">
-      <path d="M0,0 L7,3.5 L0,7 Z" fill="#BE123C"/>
+    <marker id="det-arr" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto">
+      <path d="M0,0 L6.5,3.5 L0,7 Z" fill="#94A3B8"/>
     </marker>
+    <filter id="det-soft" x="-8%" y="-8%" width="116%" height="116%">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.06"/>
+    </filter>
     <style>
-      .title { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif; font-size: 14px; font-weight: 800; letter-spacing: 0.06em; fill: #64748B; }
-      .sub { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif; font-size: 12px; font-weight: 500; fill: #64748B; }
-      .h { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif; font-size: 13px; font-weight: 800; fill: #0F172A; }
+      .title { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif; font-size: 12px; font-weight: 800; letter-spacing: 0.08em; fill: #64748B; }
+      .lead { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif; font-size: 11px; font-weight: 600; fill: #94A3B8; }
+      .h { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif; font-size: 12.5px; font-weight: 800; fill: #0F172A; }
       .s { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif; font-size: 10.5px; font-weight: 600; fill: #64748B; }
       .num { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif; font-size: 11px; font-weight: 800; fill: #FFFFFF; }
       .note { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif; font-size: 11px; font-weight: 600; fill: #94A3B8; }
     </style>
   </defs>
 
-  <rect width="1180" height="260" rx="22" fill="url(#det-bg)"/>
-  <text class="title" x="40" y="32">DETECTION PATH</text>
-  <text class="sub" x="200" y="32">Rules decide · LLMs only explain</text>
+  <rect width="1180" height="240" rx="20" fill="url(#det-bg)"/>
+  <text class="title" x="36" y="28">DETECTION PATH</text>
+  <text class="lead" x="186" y="28">Rules decide · LLMs only explain</text>
+
+  <path d="M110 118 H1070" fill="none" stroke="url(#det-flow)" stroke-width="2.5" stroke-linecap="round" opacity="0.22"/>
 
   <!-- 1 Kafka -->
-  <g transform="translate(36,58)">
-    <circle cx="18" cy="8" r="12" fill="#D97706"/>
-    <text class="num" x="18" y="12" text-anchor="middle">1</text>
-    <rect y="24" width="190" height="120" rx="16" fill="url(#det-amber)" stroke="#FCD34D" stroke-width="1.6"/>
-    <text class="h" x="95" y="70" text-anchor="middle">Kafka stream</text>
-    <text class="s" x="95" y="92" text-anchor="middle">trustedge.agent.events</text>
-    <text class="s" x="95" y="112" text-anchor="middle">durable · ordered</text>
+  <g transform="translate(28,52)" filter="url(#det-soft)">
+    <circle cx="24" cy="16" r="13" fill="#D97706"/>
+    <text class="num" x="24" y="21" text-anchor="middle">1</text>
+    <rect y="36" width="196" height="100" rx="14" fill="#FFFFFF" stroke="#FDE68A" stroke-width="1.5"/>
+    <rect y="36" width="196" height="4" rx="2" fill="#D97706"/>
+    <text class="h" x="98" y="78" text-anchor="middle">Kafka stream</text>
+    <text class="s" x="98" y="98" text-anchor="middle">trustedge.agent.events</text>
+    <text class="s" x="98" y="116" text-anchor="middle">durable · ordered</text>
   </g>
-
-  <path d="M236 140 H268" stroke="url(#det-flow)" stroke-width="3.2" stroke-linecap="round" marker-end="url(#det-a)"/>
+  <path d="M234 118 H258" stroke="#CBD5E1" stroke-width="2.2" marker-end="url(#det-arr)"/>
 
   <!-- 2 Rules -->
-  <g transform="translate(278,58)">
-    <circle cx="18" cy="8" r="12" fill="#E11D48"/>
-    <text class="num" x="18" y="12" text-anchor="middle">2</text>
-    <rect y="24" width="190" height="120" rx="16" fill="url(#det-rose)" stroke="#FDA4AF" stroke-width="1.6"/>
-    <text class="h" x="95" y="70" text-anchor="middle">Rules engine</text>
-    <text class="s" x="95" y="92" text-anchor="middle">attack chains · drift</text>
-    <text class="s" x="95" y="112" text-anchor="middle">deterministic</text>
+  <g transform="translate(268,52)" filter="url(#det-soft)">
+    <circle cx="24" cy="16" r="13" fill="#E11D48"/>
+    <text class="num" x="24" y="21" text-anchor="middle">2</text>
+    <rect y="36" width="196" height="100" rx="14" fill="#FFFFFF" stroke="#FECDD3" stroke-width="1.5"/>
+    <rect y="36" width="196" height="4" rx="2" fill="#E11D48"/>
+    <text class="h" x="98" y="78" text-anchor="middle">Rules engine</text>
+    <text class="s" x="98" y="98" text-anchor="middle">attack chains · drift</text>
+    <text class="s" x="98" y="116" text-anchor="middle">deterministic</text>
   </g>
-
-  <path d="M478 140 H510" stroke="url(#det-flow)" stroke-width="3.2" stroke-linecap="round" marker-end="url(#det-a)"/>
+  <path d="M474 118 H498" stroke="#CBD5E1" stroke-width="2.2" marker-end="url(#det-arr)"/>
 
   <!-- 3 Alert ingest -->
-  <g transform="translate(520,58)">
-    <circle cx="18" cy="8" r="12" fill="#0D9488"/>
-    <text class="num" x="18" y="12" text-anchor="middle">3</text>
-    <rect y="24" width="200" height="120" rx="16" fill="url(#det-teal)" stroke="#5EEAD4" stroke-width="1.6"/>
-    <text class="h" x="100" y="70" text-anchor="middle">Alert ingest</text>
-    <text class="s" x="100" y="92" text-anchor="middle">/security/alerts/ingest</text>
-    <text class="s" x="100" y="112" text-anchor="middle">enrich · persist</text>
+  <g transform="translate(508,52)" filter="url(#det-soft)">
+    <circle cx="24" cy="16" r="13" fill="#0D9488"/>
+    <text class="num" x="24" y="21" text-anchor="middle">3</text>
+    <rect y="36" width="196" height="100" rx="14" fill="#FFFFFF" stroke="#99F6E4" stroke-width="1.5"/>
+    <rect y="36" width="196" height="4" rx="2" fill="#0D9488"/>
+    <text class="h" x="98" y="78" text-anchor="middle">Alert ingest</text>
+    <text class="s" x="98" y="98" text-anchor="middle">/security/alerts/ingest</text>
+    <text class="s" x="98" y="116" text-anchor="middle">enrich · persist</text>
   </g>
-
-  <path d="M730 140 H762" stroke="url(#det-flow)" stroke-width="3.2" stroke-linecap="round" marker-end="url(#det-a)"/>
+  <path d="M714 118 H738" stroke="#CBD5E1" stroke-width="2.2" marker-end="url(#det-arr)"/>
 
   <!-- 4 Dashboard -->
-  <g transform="translate(772,58)">
-    <circle cx="18" cy="8" r="12" fill="#059669"/>
-    <text class="num" x="18" y="12" text-anchor="middle">4</text>
-    <rect y="24" width="180" height="120" rx="16" fill="url(#det-green)" stroke="#6EE7B7" stroke-width="1.6"/>
-    <text class="h" x="90" y="70" text-anchor="middle">Attack alerts</text>
-    <text class="s" x="90" y="92" text-anchor="middle">FastAPI + React</text>
-    <text class="s" x="90" y="112" text-anchor="middle">live · historical</text>
+  <g transform="translate(748,52)" filter="url(#det-soft)">
+    <circle cx="24" cy="16" r="13" fill="#059669"/>
+    <text class="num" x="24" y="21" text-anchor="middle">4</text>
+    <rect y="36" width="186" height="100" rx="14" fill="#FFFFFF" stroke="#A7F3D0" stroke-width="1.5"/>
+    <rect y="36" width="186" height="4" rx="2" fill="#059669"/>
+    <text class="h" x="93" y="78" text-anchor="middle">Attack alerts</text>
+    <text class="s" x="93" y="98" text-anchor="middle">FastAPI + React</text>
+    <text class="s" x="93" y="116" text-anchor="middle">live · historical</text>
   </g>
-
-  <path d="M962 140 H994" stroke="url(#det-flow)" stroke-width="3.2" stroke-linecap="round" marker-end="url(#det-a)"/>
+  <path d="M944 118 H968" stroke="#CBD5E1" stroke-width="2.2" marker-end="url(#det-arr)"/>
 
   <!-- 5 Operator -->
-  <g transform="translate(1004,58)">
-    <circle cx="18" cy="8" r="12" fill="#2563EB"/>
-    <text class="num" x="18" y="12" text-anchor="middle">5</text>
-    <rect y="24" width="140" height="120" rx="16" fill="url(#det-blue)" stroke="#93C5FD" stroke-width="1.6"/>
-    <text class="h" x="70" y="70" text-anchor="middle">Operator</text>
-    <text class="s" x="70" y="92" text-anchor="middle">review</text>
-    <text class="s" x="70" y="112" text-anchor="middle">act</text>
+  <g transform="translate(978,52)" filter="url(#det-soft)">
+    <circle cx="24" cy="16" r="13" fill="#2563EB"/>
+    <text class="num" x="24" y="21" text-anchor="middle">5</text>
+    <rect y="36" width="174" height="100" rx="14" fill="#FFFFFF" stroke="#BFDBFE" stroke-width="1.5"/>
+    <rect y="36" width="174" height="4" rx="2" fill="#2563EB"/>
+    <text class="h" x="87" y="78" text-anchor="middle">Operator</text>
+    <text class="s" x="87" y="98" text-anchor="middle">review</text>
+    <text class="s" x="87" y="116" text-anchor="middle">act</text>
   </g>
 
-  <text class="note" x="590" y="230" text-anchor="middle">Optional LLMs summarize context for operators — they never decide maliciousness</text>
+  <text class="note" x="590" y="216" text-anchor="middle">Optional LLMs summarize context for operators — they never decide maliciousness</text>
 </svg>
