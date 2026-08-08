@@ -79,7 +79,7 @@
     <rect y="36" width="320" height="5" rx="2.5" fill="#4F46E5"/>
     <text class="h" x="28" y="78">TrustEdge</text>
     <text class="chip" x="28" y="98" fill="#4338CA">FastAPI + React</text>
-    <text class="p" x="28" y="132">Rules · behavior · alerts</text>
+    <text class="p" x="28" y="132">Rules · behavior · AI activity</text>
     <text class="p" x="28" y="154">Agents · AI software</text>
     <text class="p" x="28" y="176">Behavior insights</text>
     <text class="p" x="28" y="198">S3 / CloudFront · EC2</text>

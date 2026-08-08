@@ -108,7 +108,7 @@
     <circle cx="24" cy="28" r="10" fill="#D97706"/>
     <text class="num" x="24" y="32" text-anchor="middle">3</text>
     <text class="n" x="120" y="52" text-anchor="middle">rule</text>
-    <text class="s" x="120" y="74" text-anchor="middle">attack · behavior · novelty</text>
+    <text class="s" x="120" y="74" text-anchor="middle">attack · behavior · AI activity</text>
   </g>
 
   <!-- Alert -->
