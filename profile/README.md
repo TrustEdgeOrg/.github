@@ -58,12 +58,12 @@ Five stages from the endpoint to the operator dashboard.
 
 ---
 
-## <img src="./assets/icon-architecture.svg" alt="" width="22" height="22" align="absmiddle" /> Production on AWS
+## <img src="./assets/icon-aws-shield.svg" alt="" width="22" height="22" align="absmiddle" /> Production on AWS
 
 Self-hosted on **EC2 + Docker Compose**, with **RDS**, **S3 + CloudFront**, **ECR**, and **GitHub Actions**.
 
 <p align="center">
-  <img src="./assets/aws-architecture.png" alt="TrustEdge AWS production architecture — Edge, EC2 Compose, RDS, S3/CloudFront, GitHub Actions" width="1100" />
+  <img src="./assets/aws-architecture.svg" alt="TrustEdge AWS production architecture — Edge, EC2 Compose, RDS, S3/CloudFront, GitHub Actions" width="1100" />
 </p>
 
 | Layer | What runs there |
