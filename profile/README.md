@@ -20,7 +20,7 @@ A lightweight [TrustEdge Agent](https://github.com/TrustEdgeOrg/TrustEdge-Agent)
 - **Security lifecycle** — drivers, services, and persistence (macOS / Windows)
 - **AI tools inventory** — apps, CLI agents, local model runtimes, and IDE extensions
 
-Collectors stay on the device. Events land in a **durable on-disk queue**, then are compressed (**zstd**) and uploaded over **HTTPS with a device token** to [TrustEdge-Agent-API](https://github.com/TrustEdgeOrg/TrustEdge-Agent-API). From there, Kafka streams events into detection. The [TrustEdge](https://github.com/TrustEdgeOrg/TrustEdge) control plane shows **attack alerts**, the **agents** registry, **AI tools inventory**, **behavior** baselines, and **AI activity sessions** in a React dashboard.
+Collectors stay on the device. Events land in a **durable on-disk queue**, then are compressed (**zstd**) and uploaded over **HTTPS with a device token** to [TrustEdge-Agent-API](https://github.com/TrustEdgeOrg/TrustEdge-Agent-API). Kafka streams events into detection. The [TrustEdge](https://github.com/TrustEdgeOrg/TrustEdge) control plane shows **attack alerts**, the **agents** registry, **AI tools inventory**, **behavior** baselines, and **AI activity sessions**.
 
 Detection is multi-engine and deterministic:
 
@@ -28,27 +28,9 @@ Detection is multi-engine and deterministic:
 - **Behavioral engine** — per-device baselines and novel-process alerts
 - **AI activity engine** — agentic session reconstruction and AI-tool findings
 
-Optional LLMs (**Ollama** / OpenAI / templates) can **explain** alerts and summarize network state for operators — they never decide what is malicious.
+Optional LLMs (**Ollama** / OpenAI / templates) can **explain** alerts and summarize network state — they never decide what is malicious.
 
 Built for portfolio and educational use, with AWS deploy and GitHub Actions CI/CD.
-
-<p align="center">
-  <img src="./assets/screenshot-overview.png" alt="TrustEdge overview dashboard — network health, agents, recent alerts, and severity" width="1100" />
-</p>
-
-<p align="center"><em>Overview — network health, live agents, recent alerts, and severity</em></p>
-
-<p align="center">
-  <img src="./assets/screenshot-agent-detail.png" alt="TrustEdge agent detail — process baseline, AI tools inventory, and AI sessions" width="1100" />
-</p>
-
-<p align="center"><em>Agent detail — behavior baseline, AI tools inventory, and AI sessions</em></p>
-
-<p align="center">
-  <img src="./assets/screenshot-alerts.png" alt="TrustEdge alerts — AI tool, novel process, and idle network detections" width="1100" />
-</p>
-
-<p align="center"><em>Alerts — AI tool starts, novel processes, and idle network activity</em></p>
 
 <p align="center">
   <img src="./assets/pipeline.svg" alt="Collect → Durable queue → Secure upload → Agent API → Kafka → Detect → Alert" width="1100" />
@@ -56,7 +38,42 @@ Built for portfolio and educational use, with AWS deploy and GitHub Actions CI/C
 
 ---
 
-## <img src="./assets/icon-architecture.svg" alt="" width="22" height="22" align="absmiddle" /> TrustEdge architecture
+## Screenshots
+
+### Overview
+
+Network health, live agents, recent alerts, and severity at a glance.
+
+<p align="center">
+  <img src="./assets/screenshot-overview.png" alt="TrustEdge overview dashboard" width="1100" />
+</p>
+
+### Agent detail
+
+Behavior baseline, AI tools inventory, and AI sessions on a single endpoint.
+
+<p align="center">
+  <img src="./assets/screenshot-agent-detail.png" alt="TrustEdge agent detail" width="1100" />
+</p>
+
+### Alerts
+
+AI tool starts, novel processes, and idle network activity — expandable evidence for operators.
+
+<p align="center">
+  <img src="./assets/screenshot-alerts.png" alt="TrustEdge alerts" width="1100" />
+</p>
+
+| Surface | What operators see |
+|---------|--------------------|
+| **Home** | Health, recent alerts, agent status, AI network overview |
+| **Agents** | Registry + per-agent twin, timeline, AI tools inventory, behavior, AI sessions |
+| **Alerts** | Severity/category filters, process chain/graph evidence, **Explain with Ollama** |
+| **Learn** | How it works · Detection engine |
+
+---
+
+## <img src="./assets/icon-architecture.svg" alt="" width="22" height="22" align="absmiddle" /> Architecture
 
 Five stages from the endpoint to the operator dashboard.
 
@@ -78,7 +95,7 @@ Production layout: [TrustEdge AWS deploy docs](https://github.com/TrustEdgeOrg/T
 
 ---
 
-## <img src="./assets/icon-flow.svg" alt="" width="22" height="22" align="absmiddle" /> Ecosystem map
+## <img src="./assets/icon-flow.svg" alt="" width="22" height="22" align="absmiddle" /> Ecosystem
 
 Three repositories. One detection path — collect on the endpoint, ingest securely, then detect and operate.
 
@@ -94,17 +111,6 @@ Three repositories. One detection path — collect on the endpoint, ingest secur
 
 ---
 
-## Operator surfaces
-
-| Surface | What operators see |
-|---------|--------------------|
-| **Home** | Health, recent alerts, agent status, AI network overview |
-| **Agents** | Registry + per-agent twin, timeline, AI tools inventory, behavior, AI sessions |
-| **Alerts** | Severity/category filters, process chain/graph evidence, **Explain with Ollama** |
-| **Learn** | How it works · Detection engine |
-
----
-
 ## <img src="./assets/icon-collection.svg" alt="" width="22" height="22" align="absmiddle" /> Detection path
 
 Kafka feeds attack/chain rules, the behavioral engine, and AI activity analysis. Alerts are ingested into the control plane for operators to review. LLMs may summarize — they do not judge.
@@ -117,7 +123,7 @@ Kafka feeds attack/chain rules, the behavioral engine, and AI activity analysis.
 
 ## <img src="./assets/icon-architecture.svg" alt="" width="22" height="22" align="absmiddle" /> Observability graph
 
-The twin graph connects **devices → processes / AI tools / flows → rules (attack + behavior) → alerts**. Use it for **impact analysis**, **blast radius**, and **root-cause analysis** — not decoration.
+The twin graph connects **devices → processes / AI tools / flows → rules (attack + behavior) → alerts**. Use it for **impact analysis**, **blast radius**, and **root-cause analysis**.
 
 <p align="center">
   <img src="./assets/observability-graph.svg" alt="Observability graph: device → process / AI tool / flow → rule → alert" width="1100" />
