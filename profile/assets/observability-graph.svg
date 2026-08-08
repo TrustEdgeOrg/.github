@@ -6,13 +6,8 @@
       <stop offset="0%" stop-color="#F8FAFC"/>
       <stop offset="100%" stop-color="#EEF2FF"/>
     </linearGradient>
-    <linearGradient id="obs-line" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#2563EB"/>
-      <stop offset="50%" stop-color="#0D9488"/>
-      <stop offset="100%" stop-color="#E11D48"/>
-    </linearGradient>
-    <marker id="obs-arr" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto">
-      <path d="M0,0 L6.5,3.5 L0,7 Z" fill="#94A3B8"/>
+    <marker id="obs-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#64748B"/>
     </marker>
     <filter id="obs-soft" x="-8%" y="-8%" width="116%" height="116%">
       <feDropShadow dx="0" dy="1" stdDeviation="2.5" flood-color="#0F172A" flood-opacity="0.07"/>
@@ -33,30 +28,44 @@
   <text class="title" x="36" y="30">OBSERVABILITY GRAPH</text>
   <text class="lead" x="236" y="30">Twin model for impact · blast radius · RCA</text>
 
-  <!-- Column labels -->
-  <text class="cap" x="150" y="62" text-anchor="middle">1 · OBSERVED</text>
+  <text class="cap" x="155" y="62" text-anchor="middle">1 · OBSERVED</text>
   <text class="cap" x="430" y="62" text-anchor="middle">2 · ACTIVITY</text>
-  <text class="cap" x="730" y="62" text-anchor="middle">3 · DETECTION</text>
-  <text class="cap" x="1000" y="62" text-anchor="middle">4 · OUTCOME</text>
+  <text class="cap" x="740" y="62" text-anchor="middle">3 · DETECTION</text>
+  <text class="cap" x="1020" y="62" text-anchor="middle">4 · OUTCOME</text>
 
-  <!-- Edges (behind cards) -->
-  <g fill="none" stroke="url(#obs-line)" stroke-width="2.2" stroke-linecap="round" opacity="0.55" marker-end="url(#obs-arr)">
+  <!--
+    Card geometry (for edge routing):
+      device  x=70..240   y=180..280  midY=230
+      process x=320..540  y=80..170   midY=125
+      ai tool x=320..540  y=185..275  midY=230
+      flow    x=320..540  y=290..380  midY=335
+      rule    x=620..860  y=180..280  midY=230
+      alert   x=920..1120 y=180..280  midY=230
+  -->
+  <g fill="none" stroke="#94A3B8" stroke-width="2" stroke-linecap="round" marker-end="url(#obs-arr)">
+    <!-- device → process (hosts) -->
+    <path d="M240 210 C275 210 290 125 318 125"/>
+    <!-- device → ai tool (runs) -->
     <path d="M240 230 H318"/>
-    <path d="M240 230 Q285 145 318 125"/>
-    <path d="M240 230 Q285 325 318 335"/>
+    <!-- device → flow (opens) -->
+    <path d="M240 250 C275 250 290 335 318 335"/>
+    <!-- process → rule (signals) -->
+    <path d="M540 125 C575 125 590 200 618 210" stroke-dasharray="5 5"/>
+    <!-- ai tool → rule (matches) -->
     <path d="M540 230 H618"/>
-    <path d="M540 335 H618" stroke-dasharray="5 5" opacity="0.75"/>
-    <path d="M540 125 Q575 180 618 230" stroke-dasharray="5 5" opacity="0.65"/>
+    <!-- flow → rule (correlates) -->
+    <path d="M540 335 C575 335 590 260 618 250" stroke-dasharray="5 5"/>
+    <!-- rule → alert (raises) -->
     <path d="M860 230 H918"/>
   </g>
 
-  <text class="rel" x="268" y="216">runs</text>
-  <text class="rel" x="248" y="148">hosts</text>
-  <text class="rel" x="246" y="298">opens</text>
-  <text class="rel" x="558" y="216">matches</text>
-  <text class="rel" x="550" y="318">correlates</text>
-  <text class="rel" x="548" y="168">signals</text>
-  <text class="rel" x="872" y="216">raises</text>
+  <text class="rel" x="265" y="148" text-anchor="middle">hosts</text>
+  <text class="rel" x="275" y="220" text-anchor="middle">runs</text>
+  <text class="rel" x="265" y="310" text-anchor="middle">opens</text>
+  <text class="rel" x="575" y="158" text-anchor="middle">signals</text>
+  <text class="rel" x="575" y="218" text-anchor="middle">matches</text>
+  <text class="rel" x="575" y="318" text-anchor="middle">correlates</text>
+  <text class="rel" x="885" y="218" text-anchor="middle">raises</text>
 
   <!-- Device -->
   <g transform="translate(70,180)" filter="url(#obs-soft)">
@@ -120,7 +129,7 @@
     <text class="pill" x="350" y="26" text-anchor="middle" fill="#0F766E">Blast radius</text>
     <rect x="480" width="220" height="42" rx="12" fill="#FFFFFF" stroke="#FDE68A" stroke-width="1.4"/>
     <text class="pill" x="590" y="26" text-anchor="middle" fill="#B45309">Root-cause (RCA)</text>
-    <rect x="720" width="330" height="42" rx="12" fill="#FFFFFF" stroke="#A7F3D0" stroke-width="1.4"/>
-    <text class="pill" x="885" y="26" text-anchor="middle" fill="#047857">GET /twin/graph/traverse</text>
+    <rect x="720" width="330" height="42" rx="12" fill="#FFFFFF" stroke="#C7D2FE" stroke-width="1.4"/>
+    <text class="pill" x="885" y="26" text-anchor="middle" fill="#4338CA">GET /twin/graph/traverse</text>
   </g>
 </svg>
