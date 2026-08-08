@@ -1,59 +1,111 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 200" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 260" role="img" aria-labelledby="det-title det-desc">
   <title id="det-title">TrustEdge detection path</title>
-  <desc id="det-desc">Kafka stream to rules engine to alert ingest to dashboard attack alerts for operator review</desc>
+  <desc id="det-desc">Kafka agent events feed a deterministic rules engine; alerts are ingested into FastAPI and shown in the React dashboard for operator review. LLMs may explain but do not judge.</desc>
   <defs>
-    <linearGradient id="det-bg" x1="0%" y1="0%" x2="100%" y2="0%">
+    <linearGradient id="det-bg" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#F8FAFC"/>
-      <stop offset="100%" stop-color="#F5F3FF"/>
+      <stop offset="100%" stop-color="#FFF1F2"/>
+    </linearGradient>
+    <linearGradient id="det-amber" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFBEB"/>
+      <stop offset="100%" stop-color="#FDE68A"/>
+    </linearGradient>
+    <linearGradient id="det-rose" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFF1F2"/>
+      <stop offset="100%" stop-color="#FECDD3"/>
+    </linearGradient>
+    <linearGradient id="det-teal" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F0FDFA"/>
+      <stop offset="100%" stop-color="#99F6E4"/>
+    </linearGradient>
+    <linearGradient id="det-green" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ECFDF5"/>
+      <stop offset="100%" stop-color="#A7F3D0"/>
+    </linearGradient>
+    <linearGradient id="det-blue" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#EFF6FF"/>
+      <stop offset="100%" stop-color="#BFDBFE"/>
     </linearGradient>
     <linearGradient id="det-flow" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#60A5FA"/>
-      <stop offset="100%" stop-color="#A78BFA"/>
+      <stop offset="0%" stop-color="#D97706"/>
+      <stop offset="40%" stop-color="#E11D48"/>
+      <stop offset="70%" stop-color="#0D9488"/>
+      <stop offset="100%" stop-color="#2563EB"/>
     </linearGradient>
-    <marker id="det-a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-      <path d="M0,0 L6,3 L0,6 Z" fill="#7C3AED"/>
+    <marker id="det-a" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto">
+      <path d="M0,0 L7,3.5 L0,7 Z" fill="#BE123C"/>
     </marker>
     <style>
       .title { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif; font-size: 14px; font-weight: 800; letter-spacing: 0.06em; fill: #64748B; }
+      .sub { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif; font-size: 12px; font-weight: 500; fill: #64748B; }
       .h { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif; font-size: 13px; font-weight: 800; fill: #0F172A; }
       .s { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif; font-size: 10.5px; font-weight: 600; fill: #64748B; }
+      .num { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif; font-size: 11px; font-weight: 800; fill: #FFFFFF; }
+      .note { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif; font-size: 11px; font-weight: 600; fill: #94A3B8; }
     </style>
   </defs>
 
-  <rect width="1180" height="200" rx="22" fill="url(#det-bg)"/>
-  <text class="title" x="40" y="36">DETECTION PATH</text>
+  <rect width="1180" height="260" rx="22" fill="url(#det-bg)"/>
+  <text class="title" x="40" y="32">DETECTION PATH</text>
+  <text class="sub" x="200" y="32">Rules decide · LLMs only explain</text>
 
-  <g transform="translate(40,60)">
-    <rect width="180" height="100" rx="16" fill="#EEF2FF" stroke="#C4B5FD" stroke-width="1.5"/>
-    <text class="h" x="90" y="42" text-anchor="middle">Kafka stream</text>
-    <text class="s" x="90" y="64" text-anchor="middle">trustedge.agent.events</text>
+  <!-- 1 Kafka -->
+  <g transform="translate(36,58)">
+    <circle cx="18" cy="8" r="12" fill="#D97706"/>
+    <text class="num" x="18" y="12" text-anchor="middle">1</text>
+    <rect y="24" width="190" height="120" rx="16" fill="url(#det-amber)" stroke="#FCD34D" stroke-width="1.6"/>
+    <text class="h" x="95" y="70" text-anchor="middle">Kafka stream</text>
+    <text class="s" x="95" y="92" text-anchor="middle">trustedge.agent.events</text>
+    <text class="s" x="95" y="112" text-anchor="middle">durable · ordered</text>
   </g>
-  <path d="M230 110 H270" stroke="url(#det-flow)" stroke-width="3" marker-end="url(#det-a)"/>
 
-  <g transform="translate(280,60)">
-    <rect width="180" height="100" rx="16" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1.5"/>
-    <text class="h" x="90" y="42" text-anchor="middle">Rules engine</text>
-    <text class="s" x="90" y="64" text-anchor="middle">deterministic</text>
-  </g>
-  <path d="M470 110 H510" stroke="url(#det-flow)" stroke-width="3" marker-end="url(#det-a)"/>
+  <path d="M236 140 H268" stroke="url(#det-flow)" stroke-width="3.2" stroke-linecap="round" marker-end="url(#det-a)"/>
 
-  <g transform="translate(520,60)">
-    <rect width="200" height="100" rx="16" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1.5"/>
-    <text class="h" x="100" y="42" text-anchor="middle">Alert ingest</text>
-    <text class="s" x="100" y="64" text-anchor="middle">/security/alerts/ingest</text>
+  <!-- 2 Rules -->
+  <g transform="translate(278,58)">
+    <circle cx="18" cy="8" r="12" fill="#E11D48"/>
+    <text class="num" x="18" y="12" text-anchor="middle">2</text>
+    <rect y="24" width="190" height="120" rx="16" fill="url(#det-rose)" stroke="#FDA4AF" stroke-width="1.6"/>
+    <text class="h" x="95" y="70" text-anchor="middle">Rules engine</text>
+    <text class="s" x="95" y="92" text-anchor="middle">attack chains · drift</text>
+    <text class="s" x="95" y="112" text-anchor="middle">deterministic</text>
   </g>
-  <path d="M730 110 H770" stroke="url(#det-flow)" stroke-width="3" marker-end="url(#det-a)"/>
 
-  <g transform="translate(780,60)">
-    <rect width="180" height="100" rx="16" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1.5"/>
-    <text class="h" x="90" y="42" text-anchor="middle">Attack alerts</text>
-    <text class="s" x="90" y="64" text-anchor="middle">FastAPI + React</text>
-  </g>
-  <path d="M970 110 H1010" stroke="url(#det-flow)" stroke-width="3" marker-end="url(#det-a)"/>
+  <path d="M478 140 H510" stroke="url(#det-flow)" stroke-width="3.2" stroke-linecap="round" marker-end="url(#det-a)"/>
 
-  <g transform="translate(1020,60)">
-    <rect width="120" height="100" rx="16" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.5"/>
-    <text class="h" x="60" y="42" text-anchor="middle">Operator</text>
-    <text class="s" x="60" y="64" text-anchor="middle">review</text>
+  <!-- 3 Alert ingest -->
+  <g transform="translate(520,58)">
+    <circle cx="18" cy="8" r="12" fill="#0D9488"/>
+    <text class="num" x="18" y="12" text-anchor="middle">3</text>
+    <rect y="24" width="200" height="120" rx="16" fill="url(#det-teal)" stroke="#5EEAD4" stroke-width="1.6"/>
+    <text class="h" x="100" y="70" text-anchor="middle">Alert ingest</text>
+    <text class="s" x="100" y="92" text-anchor="middle">/security/alerts/ingest</text>
+    <text class="s" x="100" y="112" text-anchor="middle">enrich · persist</text>
   </g>
+
+  <path d="M730 140 H762" stroke="url(#det-flow)" stroke-width="3.2" stroke-linecap="round" marker-end="url(#det-a)"/>
+
+  <!-- 4 Dashboard -->
+  <g transform="translate(772,58)">
+    <circle cx="18" cy="8" r="12" fill="#059669"/>
+    <text class="num" x="18" y="12" text-anchor="middle">4</text>
+    <rect y="24" width="180" height="120" rx="16" fill="url(#det-green)" stroke="#6EE7B7" stroke-width="1.6"/>
+    <text class="h" x="90" y="70" text-anchor="middle">Attack alerts</text>
+    <text class="s" x="90" y="92" text-anchor="middle">FastAPI + React</text>
+    <text class="s" x="90" y="112" text-anchor="middle">live · historical</text>
+  </g>
+
+  <path d="M962 140 H994" stroke="url(#det-flow)" stroke-width="3.2" stroke-linecap="round" marker-end="url(#det-a)"/>
+
+  <!-- 5 Operator -->
+  <g transform="translate(1004,58)">
+    <circle cx="18" cy="8" r="12" fill="#2563EB"/>
+    <text class="num" x="18" y="12" text-anchor="middle">5</text>
+    <rect y="24" width="140" height="120" rx="16" fill="url(#det-blue)" stroke="#93C5FD" stroke-width="1.6"/>
+    <text class="h" x="70" y="70" text-anchor="middle">Operator</text>
+    <text class="s" x="70" y="92" text-anchor="middle">review</text>
+    <text class="s" x="70" y="112" text-anchor="middle">act</text>
+  </g>
+
+  <text class="note" x="590" y="230" text-anchor="middle">Optional LLMs summarize context for operators — they never decide maliciousness</text>
 </svg>

@@ -70,10 +70,10 @@ Three repositories. One detection path — collect on the endpoint, ingest secur
 
 ## <img src="./assets/icon-collection.svg" alt="" width="22" height="22" align="absmiddle" /> Detection path
 
-Kafka feeds a deterministic rules engine. Alerts land in the control plane for operators to review. LLMs may summarize — they do not judge.
+Kafka feeds a deterministic rules engine. Alerts are ingested into the control plane for operators to review. LLMs may summarize — they do not judge.
 
 <p align="center">
-  <img src="./assets/detection-path.svg" alt="Kafka → rules engine → alert ingest → dashboard" width="1100" />
+  <img src="./assets/detection-path.svg" alt="Kafka → rules engine → alert ingest → attack alerts → operator" width="1100" />
 </p>
 
 ---
