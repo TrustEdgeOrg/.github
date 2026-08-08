@@ -77,9 +77,13 @@ Collect on the endpoint, deliver securely, then detect and operate.
   <img src="./assets/pipeline.svg" alt="Collect → Durable queue → Secure upload → Agent API → Kafka → Detect → Alert" width="1100" />
 </p>
 
+<p align="center"><em>Delivery path — collect → upload → detect → alert</em></p>
+
 <p align="center">
   <img src="./assets/architecture.svg" alt="TrustEdge architecture — Edge, Ingest, Stream, Detect, Operate" width="1100" />
 </p>
+
+<p align="center"><em>Five stages — Edge → Ingest → Stream → Detect → Operate</em></p>
 
 | Layer | What lives here |
 |-------|-----------------|
