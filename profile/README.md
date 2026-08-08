@@ -101,7 +101,7 @@ Three repositories. One detection path — collect on the endpoint, ingest secur
 | **Home** | Health, recent alerts, agent status, AI network overview |
 | **Agents** | Registry + per-agent twin, timeline, AI tools inventory, behavior, AI sessions |
 | **Alerts** | Severity/category filters, process chain/graph evidence, **Explain with Ollama** |
-| **Learn** | How the agent pipeline works · how detection works |
+| **Learn** | How it works · Detection engine |
 
 ---
 
