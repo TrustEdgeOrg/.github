@@ -53,7 +53,7 @@
     <text class="b" x="110" y="251" text-anchor="middle">Batch + compress</text>
     <rect x="28" y="276" width="164" height="36" rx="10" fill="#FFFFFF" stroke="#BFDBFE"/>
     <text class="b" x="110" y="299" text-anchor="middle">HTTPS upload</text>
-    <text class="s" x="110" y="340" text-anchor="middle">process · network · AI inventory</text>
+    <text class="s" x="110" y="340" text-anchor="middle">process · security · AI inventory</text>
   </g>
 
   <path d="M278 270 H318" stroke="#6366F1" stroke-width="4" stroke-linecap="round" marker-end="url(#arch-arr)"/>
