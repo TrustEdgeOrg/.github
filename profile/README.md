@@ -45,6 +45,12 @@ Built for portfolio and educational use, with AWS deploy and GitHub Actions CI/C
 <p align="center"><em>Agent detail — behavior baseline, AI tools inventory, and AI sessions</em></p>
 
 <p align="center">
+  <img src="./assets/screenshot-alerts.png" alt="TrustEdge alerts — AI tool, novel process, and idle network detections" width="1100" />
+</p>
+
+<p align="center"><em>Alerts — AI tool starts, novel processes, and idle network activity</em></p>
+
+<p align="center">
   <img src="./assets/pipeline.svg" alt="Collect → Durable queue → Secure upload → Agent API → Kafka → Detect → Alert" width="1100" />
 </p>
 
