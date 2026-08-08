@@ -80,7 +80,7 @@ Kafka feeds a deterministic rules engine. Alerts are ingested into the control p
 
 ## <img src="./assets/icon-architecture.svg" alt="" width="22" height="22" align="absmiddle" /> Observability graph
 
-The twin links devices, processes, AI tools, and flows to rules and alerts. Use it for **impact analysis**, **blast radius**, and **root-cause analysis** — not decoration.
+The twin graph connects **devices → processes / AI tools / flows → rules → alerts**. Use it for **impact analysis**, **blast radius**, and **root-cause analysis** — not decoration.
 
 <p align="center">
   <img src="./assets/observability-graph.svg" alt="Observability graph: device → process / AI tool / flow → rule → alert" width="1100" />

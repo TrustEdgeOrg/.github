@@ -1,105 +1,135 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 480" role="img" aria-labelledby="obs-title obs-desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 500" role="img" aria-labelledby="obs-title obs-desc">
   <title id="obs-title">TrustEdge observability graph</title>
-  <desc id="obs-desc">Device links to process, AI tools, and network flows. Rules raise alerts for impact analysis, blast radius, and root-cause analysis.</desc>
+  <desc id="obs-desc">Twin graph: a device links to processes, AI tools, and network flows. Rules match or correlate activity and raise alerts for impact analysis, blast radius, and root-cause analysis.</desc>
   <defs>
     <linearGradient id="obs-bg" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#F8FAFC"/>
       <stop offset="100%" stop-color="#EEF2FF"/>
     </linearGradient>
-    <linearGradient id="obs-line" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#60A5FA"/>
-      <stop offset="100%" stop-color="#A78BFA"/>
+    <linearGradient id="obs-blue" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#EFF6FF"/>
+      <stop offset="100%" stop-color="#BFDBFE"/>
     </linearGradient>
-    <marker id="obs-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <linearGradient id="obs-violet" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F5F3FF"/>
+      <stop offset="100%" stop-color="#DDD6FE"/>
+    </linearGradient>
+    <linearGradient id="obs-indigo" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#EEF2FF"/>
+      <stop offset="100%" stop-color="#C7D2FE"/>
+    </linearGradient>
+    <linearGradient id="obs-slate" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#E2E8F0"/>
+    </linearGradient>
+    <linearGradient id="obs-amber" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFBEB"/>
+      <stop offset="100%" stop-color="#FDE68A"/>
+    </linearGradient>
+    <linearGradient id="obs-rose" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFF1F2"/>
+      <stop offset="100%" stop-color="#FECDD3"/>
+    </linearGradient>
+    <linearGradient id="obs-line" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2563EB"/>
+      <stop offset="50%" stop-color="#7C3AED"/>
+      <stop offset="100%" stop-color="#E11D48"/>
+    </linearGradient>
+    <marker id="obs-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
       <path d="M0 0 L10 5 L0 10 z" fill="#6366F1"/>
     </marker>
     <style>
-      .h { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif; font-size: 18px; font-weight: 800; fill: #0F172A; }
-      .s { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif; font-size: 13px; font-weight: 500; fill: #64748B; }
+      .title { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif; font-size: 14px; font-weight: 800; letter-spacing: 0.06em; fill: #64748B; }
+      .sub { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif; font-size: 12px; font-weight: 500; fill: #64748B; }
+      .s { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif; font-size: 12px; font-weight: 500; fill: #64748B; }
       .n { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif; font-size: 15px; font-weight: 800; fill: #0F172A; }
-      .rel { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif; font-size: 12px; font-weight: 700; fill: #6366F1; }
-      .cap { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif; font-size: 12px; font-weight: 700; fill: #475569; }
+      .rel { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif; font-size: 11px; font-weight: 700; fill: #64748B; }
+      .cap { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif; font-size: 11px; font-weight: 800; letter-spacing: 0.04em; fill: #94A3B8; }
       .pill { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif; font-size: 12px; font-weight: 700; }
     </style>
   </defs>
 
-  <rect width="1180" height="480" rx="24" fill="url(#obs-bg)"/>
+  <rect width="1180" height="500" rx="24" fill="url(#obs-bg)"/>
+  <text class="title" x="40" y="34">OBSERVABILITY GRAPH</text>
+  <text class="sub" x="250" y="34">Twin model for impact · blast radius · RCA</text>
 
   <!-- Column labels -->
-  <text class="cap" x="140" y="42" text-anchor="middle">OBSERVED</text>
-  <text class="cap" x="430" y="42" text-anchor="middle">ACTIVITY</text>
-  <text class="cap" x="740" y="42" text-anchor="middle">DETECTION</text>
-  <text class="cap" x="1020" y="42" text-anchor="middle">OUTCOME</text>
+  <text class="cap" x="150" y="68" text-anchor="middle">1 · OBSERVED</text>
+  <text class="cap" x="430" y="68" text-anchor="middle">2 · ACTIVITY</text>
+  <text class="cap" x="730" y="68" text-anchor="middle">3 · DETECTION</text>
+  <text class="cap" x="1000" y="68" text-anchor="middle">4 · OUTCOME</text>
 
   <!-- Edges -->
-  <g fill="none" stroke="url(#obs-line)" stroke-width="3" stroke-linecap="round" marker-end="url(#obs-arr)">
-    <path d="M230 200 H330"/>
-    <path d="M230 200 Q280 120 330 110"/>
-    <path d="M230 200 Q280 300 330 300"/>
-    <path d="M530 200 H630"/>
-    <path d="M530 300 H630" stroke-dasharray="7 5"/>
-    <path d="M850 200 H920"/>
+  <g fill="none" stroke="url(#obs-line)" stroke-width="2.8" stroke-linecap="round" marker-end="url(#obs-arr)">
+    <path d="M240 230 H320"/>
+    <path d="M240 230 Q285 140 320 125"/>
+    <path d="M240 230 Q285 330 320 335"/>
+    <path d="M530 230 H620"/>
+    <path d="M530 335 H620" stroke-dasharray="6 5" opacity="0.85"/>
+    <path d="M530 125 Q575 180 620 230" stroke-dasharray="6 5" opacity="0.7"/>
+    <path d="M850 230 H920"/>
   </g>
 
-  <text class="rel" x="270" y="188">runs</text>
-  <text class="rel" x="255" y="118">emits</text>
-  <text class="rel" x="250" y="268">opens</text>
-  <text class="rel" x="560" y="188">matches</text>
-  <text class="rel" x="555" y="288">correlates</text>
-  <text class="rel" x="870" y="188">raises</text>
+  <text class="rel" x="270" y="218">runs</text>
+  <text class="rel" x="250" y="145">hosts</text>
+  <text class="rel" x="248" y="300">opens</text>
+  <text class="rel" x="555" y="218">matches</text>
+  <text class="rel" x="548" y="318">correlates</text>
+  <text class="rel" x="545" y="165">signals</text>
+  <text class="rel" x="870" y="218">raises</text>
 
   <!-- Device -->
-  <g transform="translate(70,150)">
-    <rect width="160" height="100" rx="18" fill="#EFF6FF" stroke="#2563EB" stroke-width="2.5"/>
-    <text class="n" x="80" y="42" text-anchor="middle">device</text>
-    <text class="s" x="80" y="66" text-anchor="middle">laptop-01</text>
+  <g transform="translate(70,180)">
+    <rect width="170" height="100" rx="18" fill="url(#obs-blue)" stroke="#60A5FA" stroke-width="2.2"/>
+    <text class="n" x="85" y="42" text-anchor="middle">device</text>
+    <text class="s" x="85" y="66" text-anchor="middle">endpoint / agent</text>
   </g>
 
   <!-- Process -->
-  <g transform="translate(330,60)">
-    <rect width="200" height="90" rx="18" fill="#F5F3FF" stroke="#A78BFA" stroke-width="2"/>
-    <text class="n" x="100" y="38" text-anchor="middle">process</text>
-    <text class="s" x="100" y="62" text-anchor="middle">shell -&gt; curl</text>
+  <g transform="translate(320,80)">
+    <rect width="210" height="90" rx="18" fill="url(#obs-violet)" stroke="#A78BFA" stroke-width="2"/>
+    <text class="n" x="105" y="38" text-anchor="middle">process</text>
+    <text class="s" x="105" y="62" text-anchor="middle">shell → curl</text>
   </g>
 
-  <!-- AI tool / known AI inventory -->
-  <g transform="translate(330,155)">
-    <rect width="200" height="90" rx="18" fill="#EEF2FF" stroke="#6366F1" stroke-width="2.5"/>
-    <text class="n" x="100" y="38" text-anchor="middle">ai tool</text>
-    <text class="s" x="100" y="62" text-anchor="middle">cursor · ollama · cline</text>
+  <!-- AI tool -->
+  <g transform="translate(320,185)">
+    <rect width="210" height="90" rx="18" fill="url(#obs-indigo)" stroke="#818CF8" stroke-width="2.2"/>
+    <text class="n" x="105" y="38" text-anchor="middle">ai tool</text>
+    <text class="s" x="105" y="62" text-anchor="middle">cursor · ollama · cline</text>
   </g>
 
   <!-- Flow -->
-  <g transform="translate(330,250)">
-    <rect width="200" height="90" rx="18" fill="#F8FAFC" stroke="#94A3B8" stroke-width="2"/>
-    <text class="n" x="100" y="38" text-anchor="middle">flow</text>
-    <text class="s" x="100" y="62" text-anchor="middle">tcp egress</text>
+  <g transform="translate(320,290)">
+    <rect width="210" height="90" rx="18" fill="url(#obs-slate)" stroke="#94A3B8" stroke-width="2"/>
+    <text class="n" x="105" y="38" text-anchor="middle">flow</text>
+    <text class="s" x="105" y="62" text-anchor="middle">tcp egress</text>
   </g>
 
   <!-- Rule -->
-  <g transform="translate(630,150)">
-    <rect width="220" height="100" rx="18" fill="#F5F3FF" stroke="#7C3AED" stroke-width="2.5"/>
-    <text class="n" x="110" y="42" text-anchor="middle">rule</text>
-    <text class="s" x="110" y="66" text-anchor="middle">attack chain</text>
+  <g transform="translate(620,180)">
+    <rect width="230" height="100" rx="18" fill="url(#obs-amber)" stroke="#FBBF24" stroke-width="2.2"/>
+    <text class="n" x="115" y="42" text-anchor="middle">rule</text>
+    <text class="s" x="115" y="66" text-anchor="middle">attack chain · drift</text>
   </g>
 
   <!-- Alert -->
-  <g transform="translate(920,150)">
-    <rect width="200" height="100" rx="18" fill="#FEF2F2" stroke="#EF4444" stroke-width="2.5"/>
+  <g transform="translate(920,180)">
+    <rect width="200" height="100" rx="18" fill="url(#obs-rose)" stroke="#FB7185" stroke-width="2.2"/>
     <text class="n" x="100" y="42" text-anchor="middle">alert</text>
     <text class="s" x="100" y="66" text-anchor="middle">high severity</text>
   </g>
 
-  <!-- Bottom capability pills -->
-  <g transform="translate(70,390)">
-    <rect width="230" height="44" rx="12" fill="#FFFFFF" stroke="#CBD5E1"/>
-    <text class="pill" x="115" y="27" text-anchor="middle" fill="#334155">Impact analysis</text>
-    <rect x="250" width="230" height="44" rx="12" fill="#FFFFFF" stroke="#CBD5E1"/>
-    <text class="pill" x="365" y="27" text-anchor="middle" fill="#334155">Blast radius</text>
-    <rect x="500" width="230" height="44" rx="12" fill="#FFFFFF" stroke="#CBD5E1"/>
-    <text class="pill" x="615" y="27" text-anchor="middle" fill="#334155">Root-cause (RCA)</text>
-    <rect x="750" width="300" height="44" rx="12" fill="#EEF2FF" stroke="#C7D2FE"/>
-    <text class="pill" x="900" y="27" text-anchor="middle" fill="#4338CA">GET /twin/graph/traverse</text>
+  <!-- Capability pills -->
+  <g transform="translate(70,420)">
+    <rect width="220" height="42" rx="12" fill="#EFF6FF" stroke="#93C5FD"/>
+    <text class="pill" x="110" y="26" text-anchor="middle" fill="#1D4ED8">Impact analysis</text>
+    <rect x="240" width="220" height="42" rx="12" fill="#F5F3FF" stroke="#C4B5FD"/>
+    <text class="pill" x="350" y="26" text-anchor="middle" fill="#6D28D9">Blast radius</text>
+    <rect x="480" width="220" height="42" rx="12" fill="#FFFBEB" stroke="#FCD34D"/>
+    <text class="pill" x="590" y="26" text-anchor="middle" fill="#B45309">Root-cause (RCA)</text>
+    <rect x="720" width="330" height="42" rx="12" fill="#ECFDF5" stroke="#6EE7B7"/>
+    <text class="pill" x="885" y="26" text-anchor="middle" fill="#047857">GET /twin/graph/traverse</text>
   </g>
 </svg>
