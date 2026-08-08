@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 520" role="img" aria-labelledby="arch-title arch-desc">
   <title id="arch-title">TrustEdge architecture flow</title>
-  <desc id="arch-desc">Endpoints with TrustEdge Agent, Agent API ingest, Kafka stream, detection engine, then TrustEdge dashboard.</desc>
+  <desc id="arch-desc">Endpoints with TrustEdge Agent collecting process, network, and AI inventory signals; Agent API ingest; Kafka stream; detection engine; TrustEdge dashboard.</desc>
   <defs>
     <linearGradient id="arch-bg" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#F8FAFC"/>
@@ -53,7 +53,7 @@
     <text class="b" x="110" y="251" text-anchor="middle">Batch + compress</text>
     <rect x="28" y="276" width="164" height="36" rx="10" fill="#FFFFFF" stroke="#BFDBFE"/>
     <text class="b" x="110" y="299" text-anchor="middle">HTTPS upload</text>
-    <text class="s" x="110" y="340" text-anchor="middle">process / apps / network</text>
+    <text class="s" x="110" y="340" text-anchor="middle">process · network · AI inventory</text>
   </g>
 
   <path d="M278 270 H318" stroke="#6366F1" stroke-width="4" stroke-linecap="round" marker-end="url(#arch-arr)"/>
@@ -90,7 +90,7 @@
     <path d="M40 210 C70 180 100 240 130 210 S190 180 210 210" fill="none" stroke="#7C3AED" stroke-width="3.5" stroke-linecap="round"/>
     <path d="M40 240 C70 210 100 270 130 240 S190 210 210 240" fill="none" stroke="#C4B5FD" stroke-width="3" stroke-linecap="round"/>
     <rect x="28" y="276" width="164" height="36" rx="10" fill="#FFFFFF" stroke="#DDD6FE"/>
-    <text class="b" x="110" y="299" text-anchor="middle">agent.events</text>
+    <text class="b" x="110" y="299" text-anchor="middle">trustedge.agent.events</text>
     <text class="s" x="110" y="340" text-anchor="middle">durable / ordered</text>
   </g>
 
@@ -128,7 +128,7 @@
     <rect x="18" y="180" width="144" height="36" rx="10" fill="#FFFFFF" stroke="#A7F3D0"/>
     <text class="b" x="90" y="203" text-anchor="middle">Attack alerts</text>
     <rect x="18" y="228" width="144" height="36" rx="10" fill="#FFFFFF" stroke="#A7F3D0"/>
-    <text class="b" x="90" y="251" text-anchor="middle">Network map</text>
+    <text class="b" x="90" y="251" text-anchor="middle">Agents · AI tools</text>
     <rect x="18" y="276" width="144" height="36" rx="10" fill="#FFFFFF" stroke="#A7F3D0"/>
     <text class="b" x="90" y="299" text-anchor="middle">Behavior</text>
     <text class="s" x="90" y="340" text-anchor="middle">S3 / CloudFront</text>

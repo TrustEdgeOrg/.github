@@ -12,7 +12,7 @@ React dashboard · FastAPI control plane · TrustEdge Agent · Agent API · AWS
 
 TrustEdge is a **self-hosted security observability platform** for teams that want real endpoint signal and actionable detection without buying a heavy enterprise EDR stack.
 
-A lightweight [TrustEdge Agent](https://github.com/TrustEdgeOrg/TrustEdge-Agent) runs on macOS, Linux, and Windows. It collects process, app-focus, and network-posture telemetry, batches and compresses it, then uploads over HTTPS to [TrustEdge-Agent-API](https://github.com/TrustEdgeOrg/TrustEdge-Agent-API). Events flow onto Kafka, a rules engine looks for attack chains and drift, and the [TrustEdge](https://github.com/TrustEdgeOrg/TrustEdge) control plane surfaces **attack alerts**, maps, and behavior views in a React dashboard.
+A lightweight [TrustEdge Agent](https://github.com/TrustEdgeOrg/TrustEdge-Agent) runs on macOS, Linux, and Windows. It collects process, activity, network-posture, and **AI tools inventory** telemetry (apps, CLI agents, local model runtimes, IDE extensions), batches and compresses it, then uploads over HTTPS to [TrustEdge-Agent-API](https://github.com/TrustEdgeOrg/TrustEdge-Agent-API). Events flow onto Kafka, a rules engine looks for attack chains and drift, and the [TrustEdge](https://github.com/TrustEdgeOrg/TrustEdge) control plane surfaces **attack alerts**, agents, installed AI software, and behavior views in a React dashboard.
 
 Detection stays **rules-based** (deterministic). Optional LLMs only help explain state to operators — they do not decide what is malicious.
 
@@ -29,16 +29,16 @@ Built for portfolio / educational use and AWS deploy with CI/CD.
 How the stack fits together — edge collection, secure ingest, stream detection, and the operator dashboard.
 
 <p align="center">
-  <img src="./assets/architecture-v4.png" alt="TrustEdge architecture — 5 clear stages from endpoint agent to dashboard" width="1100" />
+  <img src="./assets/architecture.svg" alt="TrustEdge architecture — Edge, Ingest, Stream, Detect, Operate" width="1100" />
 </p>
 
 | Layer | What lives here |
 |-------|-----------------|
 | **Edge** | TrustEdge Agent — collect · batch · compress · HTTPS |
 | **Ingest** | Agent API — auth · validate · persist · publish |
-| **Stream** | Kafka / Redpanda — durable `agent.events` bus |
+| **Stream** | Kafka / Redpanda — durable agent-events bus |
 | **Detection** | Rules engine — deterministic attack / drift rules |
-| **Control plane** | FastAPI · Twin — alerts, graph, maps, devices |
+| **Control plane** | FastAPI · Twin — alerts, agents, AI inventory, behavior |
 | **Dashboard** | React · S3 · CloudFront — operator views |
 
 ---
@@ -53,7 +53,7 @@ Three repositories, one detection path.
 
 | Repository | Role |
 |------------|------|
-| [**TrustEdge**](https://github.com/TrustEdgeOrg/TrustEdge/tree/docs/readme-endpoint-focus) | Control plane · dashboard · detection |
+| [**TrustEdge**](https://github.com/TrustEdgeOrg/TrustEdge) | Control plane · dashboard · detection |
 | [**TrustEdge-Agent**](https://github.com/TrustEdgeOrg/TrustEdge-Agent) | Endpoint collector (Go) |
 | [**TrustEdge-Agent-API**](https://github.com/TrustEdgeOrg/TrustEdge-Agent-API) | Ingest · validate · Kafka |
 
@@ -74,7 +74,7 @@ Rules stay deterministic. LLMs only explain — they do not decide.
 Canonical twin model — devices, processes, apps, and flows linked to rules and alerts. Used for **impact analysis**, **blast radius**, and **RCA** (not a layout toy).
 
 <p align="center">
-  <img src="./assets/observability-graph.png" alt="Observability graph: device → process / app / flow → rule → alert" width="1100" />
+  <img src="./assets/observability-graph.svg" alt="Observability graph: device → process / AI tool / flow → rule → alert" width="1100" />
 </p>
 
 ---
@@ -83,9 +83,9 @@ Canonical twin model — devices, processes, apps, and flows linked to rules and
 
 | Capability | Implementation |
 |------------|----------------|
-| Endpoint telemetry | TrustEdge Agent → Agent API → stream |
+| Endpoint telemetry | Process, activity, network posture, AI tools inventory |
 | Detection | Kafka-backed rules → attack alerts |
-| Observability | Network map · client map · behavior drift · graph |
+| Observability | Attack alerts · agents registry · installed AI software · behavior |
 | AI operations | Optional summaries (OpenAI / Ollama / template) |
 | Production ops | CloudWatch · Alembic · ECR deploy |
 
@@ -97,4 +97,4 @@ Canonical twin model — devices, processes, apps, and flows linked to rules and
 
 ---
 
-**Docs:** [Architecture](https://github.com/TrustEdgeOrg/TrustEdge/blob/docs/readme-endpoint-focus/docs/SYSTEM_ARCHITECTURE.md) · [TrustEdge README](https://github.com/TrustEdgeOrg/TrustEdge/blob/docs/readme-endpoint-focus/README.md) · [Org](https://github.com/TrustEdgeOrg)
+**Docs:** [Architecture](https://github.com/TrustEdgeOrg/TrustEdge/blob/develop/docs/SYSTEM_ARCHITECTURE.md) · [TrustEdge README](https://github.com/TrustEdgeOrg/TrustEdge/blob/develop/README.md) · [Org](https://github.com/TrustEdgeOrg)

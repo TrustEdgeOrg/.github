@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 480" role="img" aria-labelledby="obs-title obs-desc">
   <title id="obs-title">TrustEdge observability graph</title>
-  <desc id="obs-desc">Device links to process, app, and flow entities. Detection rules connect to alerts for impact analysis and RCA.</desc>
+  <desc id="obs-desc">Device links to process, AI tools, and flow entities. Detection rules connect to alerts for impact analysis and RCA.</desc>
   <defs>
     <linearGradient id="obs-bg" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#F8FAFC"/>
@@ -63,11 +63,11 @@
     <text class="s" x="100" y="62" text-anchor="middle">shell -&gt; curl</text>
   </g>
 
-  <!-- App -->
+  <!-- AI tool / known AI inventory -->
   <g transform="translate(330,155)">
     <rect width="200" height="90" rx="18" fill="#EEF2FF" stroke="#6366F1" stroke-width="2.5"/>
-    <text class="n" x="100" y="38" text-anchor="middle">app</text>
-    <text class="s" x="100" y="62" text-anchor="middle">chrome</text>
+    <text class="n" x="100" y="38" text-anchor="middle">ai tool</text>
+    <text class="s" x="100" y="62" text-anchor="middle">cursor · ollama · cline</text>
   </g>
 
   <!-- Flow -->
