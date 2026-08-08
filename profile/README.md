@@ -154,4 +154,4 @@ The twin graph connects **devices → processes / AI tools / flows → rules (at
 
 ---
 
-**Docs:** [Architecture](https://github.com/TrustEdgeOrg/TrustEdge/blob/main/docs/SYSTEM_ARCHITECTURE.md) · [TrustEdge README](https://github.com/TrustEdgeOrg/TrustEdge/blob/main/README.md) · [Agent](https://github.com/TrustEdgeOrg/TrustEdge-Agent) · [Org](https://github.com/TrustEdgeOrg)
+**Docs:** [Architecture](https://github.com/TrustEdgeOrg/TrustEdge/blob/main/docs/ARCHITECTURE.md) · [TrustEdge README](https://github.com/TrustEdgeOrg/TrustEdge/blob/main/README.md) · [Agent](https://github.com/TrustEdgeOrg/TrustEdge-Agent) · [Org](https://github.com/TrustEdgeOrg)
