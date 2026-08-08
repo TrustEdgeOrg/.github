@@ -33,6 +33,12 @@ Optional LLMs (**Ollama** / OpenAI / templates) can **explain** alerts and summa
 Built for portfolio and educational use, with AWS deploy and GitHub Actions CI/CD.
 
 <p align="center">
+  <img src="./assets/screenshot-overview.png" alt="TrustEdge overview dashboard — network health, agents, recent alerts, and severity" width="1100" />
+</p>
+
+<p align="center"><em>Overview — network health, live agents, recent alerts, and severity</em></p>
+
+<p align="center">
   <img src="./assets/pipeline.svg" alt="Collect → Durable queue → Secure upload → Agent API → Kafka → Detect → Alert" width="1100" />
 </p>
 
