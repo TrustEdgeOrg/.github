@@ -54,7 +54,7 @@ Five stages from the endpoint to the operator dashboard.
 
 ## <img src="./assets/icon-flow.svg" alt="" width="22" height="22" align="absmiddle" /> Ecosystem map
 
-Three repositories. One detection path.
+Three repositories. One detection path — collect on the endpoint, ingest securely, then detect and operate.
 
 <p align="center">
   <img src="./assets/ecosystem.svg" alt="TrustEdge ecosystem — Agent, Agent API, TrustEdge" width="1100" />
