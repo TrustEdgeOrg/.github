@@ -20,9 +20,9 @@ A lightweight [TrustEdge Agent](https://github.com/TrustEdgeOrg/TrustEdge-Agent)
 - **Security lifecycle** — drivers, services, and persistence
 - **AI tools inventory** — apps, CLI agents, local model runtimes, and IDE extensions
 
-Collectors stay on the device. Events land in a **durable on-disk queue**, then are compressed and uploaded over **HTTPS with a device token** to [TrustEdge-Agent-API](https://github.com/TrustEdgeOrg/TrustEdge-Agent-API). From there, Kafka streams events to a rules engine. The [TrustEdge](https://github.com/TrustEdgeOrg/TrustEdge) control plane shows **attack alerts**, the agents registry, **installed AI software**, and behavior views in a React dashboard.
+Collectors stay on the device. Events land in a **durable on-disk queue**, then are compressed and uploaded over **HTTPS with a device token** to [TrustEdge-Agent-API](https://github.com/TrustEdgeOrg/TrustEdge-Agent-API). From there, Kafka streams events to detection. The [TrustEdge](https://github.com/TrustEdgeOrg/TrustEdge) control plane shows **attack alerts**, the agents registry, **installed AI software**, and **behavior** views in a React dashboard.
 
-Detection is **rules-based** and deterministic. Optional LLMs can explain state to operators — they never decide what is malicious.
+Detection combines **YAML attack/chain rules** with a **behavioral engine** (device baselines and novel-process alerts). Both are deterministic. Optional LLMs can explain state to operators — they never decide what is malicious.
 
 Built for portfolio and educational use, with AWS deploy and GitHub Actions CI/CD.
 
@@ -45,7 +45,7 @@ Five stages from the endpoint to the operator dashboard.
 | **Edge** | TrustEdge Agent (Go) — collect · durable queue · compress · HTTPS |
 | **Ingest** | Agent API (FastAPI) — device auth · validate · publish |
 | **Stream** | Kafka / Redpanda — durable `trustedge.agent.events` bus |
-| **Detection** | Rules engine — attack chains and drift → alerts |
+| **Detection** | Attack/chain rules + behavior baselines / novel process → alerts |
 | **Operate** | FastAPI + React — alerts, agents, AI software, behavior |
 | **Data** | PostgreSQL (RDS) · Redis — source of truth · live state |
 | **Hosting** | EC2 + Docker Compose · S3 + CloudFront · ECR |
@@ -70,17 +70,17 @@ Three repositories. One detection path — collect on the endpoint, ingest secur
 
 ## <img src="./assets/icon-collection.svg" alt="" width="22" height="22" align="absmiddle" /> Detection path
 
-Kafka feeds a deterministic rules engine. Alerts are ingested into the control plane for operators to review. LLMs may summarize — they do not judge.
+Kafka feeds attack/chain rules and the behavioral engine. Alerts are ingested into the control plane for operators to review. LLMs may summarize — they do not judge.
 
 <p align="center">
-  <img src="./assets/detection-path.svg" alt="Kafka → rules engine → alert ingest → attack alerts → operator" width="1100" />
+  <img src="./assets/detection-path.svg" alt="Kafka → attack/chain rules + behavior → alert ingest → attack alerts → operator" width="1100" />
 </p>
 
 ---
 
 ## <img src="./assets/icon-architecture.svg" alt="" width="22" height="22" align="absmiddle" /> Observability graph
 
-The twin graph connects **devices → processes / AI tools / flows → rules → alerts**. Use it for **impact analysis**, **blast radius**, and **root-cause analysis** — not decoration.
+The twin graph connects **devices → processes / AI tools / flows → rules (attack + behavior) → alerts**. Use it for **impact analysis**, **blast radius**, and **root-cause analysis** — not decoration.
 
 <p align="center">
   <img src="./assets/observability-graph.svg" alt="Observability graph: device → process / AI tool / flow → rule → alert" width="1100" />
@@ -94,7 +94,7 @@ The twin graph connects **devices → processes / AI tools / flows → rules →
 |------------|----------------|
 | Endpoint telemetry | Device, activity, network, process, security lifecycle, AI tools inventory |
 | Reliable delivery | Durable queue · compress · HTTPS · retry with backoff |
-| Detection | Kafka-backed rules → attack alerts |
+| Detection | Kafka-backed attack/chain rules + behavior baselines / novelty → alerts |
 | Observability | Alerts · agents registry · installed AI software · behavior |
 | AI operations | Optional summaries (OpenAI / Ollama / templates) |
 | Production ops | EC2 + Docker Compose · RDS · S3/CloudFront · ECR · GitHub Actions |
