@@ -42,17 +42,23 @@ Built for portfolio and educational use, with AWS deploy and GitHub Actions CI/C
   <img src="./assets/screenshot-overview.png" alt="TrustEdge overview dashboard" width="1100" />
 </p>
 
+<p align="center"><em>Network health, live agents, recent alerts, and severity at a glance.</em></p>
+
 ### Agent detail
 
 <p align="center">
   <img src="./assets/screenshot-agent-detail.png" alt="TrustEdge agent detail" width="1100" />
 </p>
 
+<p align="center"><em>Behavior baseline, AI tools inventory, and AI sessions on a single endpoint.</em></p>
+
 ### Alerts
 
 <p align="center">
   <img src="./assets/screenshot-alerts.png" alt="TrustEdge alerts" width="1100" />
 </p>
+
+<p align="center"><em>AI tool starts, novel processes, and idle network activity — with expandable evidence.</em></p>
 
 | Surface | What operators see |
 |---------|--------------------|
