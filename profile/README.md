@@ -20,7 +20,7 @@ A lightweight [TrustEdge Agent](https://github.com/TrustEdgeOrg/TrustEdge-Agent)
 - **Security lifecycle** — drivers, services, and persistence (macOS / Windows)
 - **AI tools inventory** — apps, CLI agents, local model runtimes, and IDE extensions
 
-Collectors stay on the device. Events land in a **durable on-disk queue**, then are compressed (**zstd**) and uploaded over **HTTPS with a device token** to [TrustEdge-Agent-API](https://github.com/TrustEdgeOrg/TrustEdge-Agent-API). From there, Kafka streams events into detection. The [TrustEdge](https://github.com/TrustEdgeOrg/TrustEdge) control plane shows **attack alerts**, the **agents** registry, **installed AI software**, **behavior** baselines, and **AI activity sessions** in a React dashboard.
+Collectors stay on the device. Events land in a **durable on-disk queue**, then are compressed (**zstd**) and uploaded over **HTTPS with a device token** to [TrustEdge-Agent-API](https://github.com/TrustEdgeOrg/TrustEdge-Agent-API). From there, Kafka streams events into detection. The [TrustEdge](https://github.com/TrustEdgeOrg/TrustEdge) control plane shows **attack alerts**, the **agents** registry, **AI tools inventory**, **behavior** baselines, and **AI activity sessions** in a React dashboard.
 
 Detection is multi-engine and deterministic:
 
@@ -37,6 +37,12 @@ Built for portfolio and educational use, with AWS deploy and GitHub Actions CI/C
 </p>
 
 <p align="center"><em>Overview — network health, live agents, recent alerts, and severity</em></p>
+
+<p align="center">
+  <img src="./assets/screenshot-agent-detail.png" alt="TrustEdge agent detail — process baseline, AI tools inventory, and AI sessions" width="1100" />
+</p>
+
+<p align="center"><em>Agent detail — behavior baseline, AI tools inventory, and AI sessions</em></p>
 
 <p align="center">
   <img src="./assets/pipeline.svg" alt="Collect → Durable queue → Secure upload → Agent API → Kafka → Detect → Alert" width="1100" />
@@ -87,7 +93,7 @@ Three repositories. One detection path — collect on the endpoint, ingest secur
 | Surface | What operators see |
 |---------|--------------------|
 | **Home** | Health, recent alerts, agent status, AI network overview |
-| **Agents** | Registry + per-agent twin, timeline, AI software, behavior, AI sessions |
+| **Agents** | Registry + per-agent twin, timeline, AI tools inventory, behavior, AI sessions |
 | **Alerts** | Severity/category filters, process chain/graph evidence, **Explain with Ollama** |
 | **Learn** | How the agent pipeline works · how detection works |
 
