@@ -32,10 +32,6 @@ Optional LLMs (**Ollama** / OpenAI / templates) can **explain** alerts and summa
 
 Built for portfolio and educational use, with AWS deploy and GitHub Actions CI/CD.
 
-<p align="center">
-  <img src="./assets/pipeline.svg" alt="Collect → Durable queue → Secure upload → Agent API → Kafka → Detect → Alert" width="1100" />
-</p>
-
 ---
 
 ## Screenshots
@@ -69,7 +65,11 @@ Built for portfolio and educational use, with AWS deploy and GitHub Actions CI/C
 
 ## <img src="./assets/icon-architecture.svg" alt="" width="22" height="22" align="absmiddle" /> Architecture
 
-Five stages from the endpoint to the operator dashboard.
+Collect on the endpoint, deliver securely, then detect and operate.
+
+<p align="center">
+  <img src="./assets/pipeline.svg" alt="Collect → Durable queue → Secure upload → Agent API → Kafka → Detect → Alert" width="1100" />
+</p>
 
 <p align="center">
   <img src="./assets/architecture.svg" alt="TrustEdge architecture — Edge, Ingest, Stream, Detect, Operate" width="1100" />
